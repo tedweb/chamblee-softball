@@ -1,10 +1,20 @@
+import Image from "next/image";
 import { ConceptSwitch, Nav, SponsorLine } from "../ui";
 
 export default function GameDay() {
   return <main className="gameDayPage">
     <Nav variant="dark" />
     <section className="gdHero">
-      <div className="gdCircle" aria-hidden="true">C</div>
+      <div className="gdBulldogBadge">
+        <Image
+          className="gdBulldogLogo"
+          src="/chamblee-bulldog-logo.jpg"
+          alt="Chamblee Bulldogs logo"
+          width={540}
+          height={570}
+          priority
+        />
+      </div>
       <div className="gdHeroCopy"><p className="pageEyebrow">Chamblee High School · Varsity &amp; JV</p><h1>Bulldogs<br/><em>play here.</em></h1><p>The official home of Chamblee Softball and the Chamblee Softball Booster Club.</p><div className="heroActions"><a href="#schedule">View schedule</a><a className="outlineAction" href="#live">Follow live ↗</a></div></div>
       <div className="gdSeason"><span>2026 SEASON</span><strong>7–2</strong><small>OVERALL RECORD</small></div>
     </section>
