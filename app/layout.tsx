@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,21 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3001";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const image = `${protocol}://${host}/og.png`;
-  const title = "Chamblee Softball — Landing Page Concepts";
-  const description = "Three responsive homepage directions for the Chamblee High School Softball program.";
-  return {
-    title,
-    description,
-    icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-    openGraph: { title, description, images: [image] },
-    twitter: { card: "summary_large_image", title, description, images: [image] },
-  };
-}
+export const metadata: Metadata = {
+  title: "Chamblee Bulldogs Softball",
+  description: "The official home of Chamblee High School Softball and the Chamblee Softball Booster Club.",
+  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+};
 
 export default function RootLayout({
   children,

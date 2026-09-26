@@ -32,6 +32,14 @@ a { color:inherit; }
 .dark .siteMark { background:var(--gold); color:var(--blue); }
 .siteNav nav { display:flex; align-items:center; gap:clamp(14px,2.2vw,32px); font-size:12px; }
 .siteNav nav a { text-decoration:none; }
+.siteTeamsMenu { position:relative; }
+.siteTeamsMenu summary { cursor:pointer; list-style:none; }
+.siteTeamsMenu summary::-webkit-details-marker { display:none; }
+.siteTeamsMenu summary::after { content:" +"; color:var(--gold); }
+.siteTeamsMenu[open] summary::after { content:" −"; }
+.siteTeamsMenu>div { position:absolute; z-index:10; top:calc(100% + 14px); left:50%; transform:translateX(-50%); min-width:180px; padding:8px; display:grid; gap:2px; background:white; color:var(--blue); border:1px solid rgba(8,42,103,.18); border-radius:8px; box-shadow:0 16px 36px rgba(4,19,48,.2); }
+.siteTeamsMenu>div a { padding:10px 12px; border-radius:5px; font-size:13px; white-space:nowrap; }
+.siteTeamsMenu>div a:hover,.siteTeamsMenu>div a:focus-visible { background:#eef3f9; }
 .navDonate { padding:10px 16px; border-radius:999px; background:var(--gold); color:var(--blue)!important; font-weight:700; }
 .pageEyebrow { margin:0 0 10px; font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
 .conceptSwitch { display:flex; justify-content:center; flex-wrap:wrap; gap:14px; padding:20px; background:#061e4c; color:rgba(255,255,255,.75); font-size:12px; }
@@ -137,7 +145,7 @@ a { color:inherit; }
 .scoreDonate small { display:block; margin-top:12px; color:#becbe0; }
 
 @media (max-width:800px) {
-  .siteNav nav a:not(.navDonate) { display:none; }
+  .siteNav nav>a:not(.navDonate), .siteTeamsMenu { display:none; }
   .siteBrand { font-size:10px; }
   .gdHero { min-height:560px; align-items:flex-start; }
   .gdBulldogBadge { right:-45px; bottom:-16px; top:auto; transform:none; width:250px; }
