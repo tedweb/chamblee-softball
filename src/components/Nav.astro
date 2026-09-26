@@ -1,0 +1,12 @@
+---
+interface Props { dark?: boolean; compact?: boolean; }
+const { dark = false, compact = false } = Astro.props;
+---
+<header class:list={["site-nav", { dark }]}>
+  <a class="brand" href="/"><img src="/images/chamblee-bulldog-logo.jpg" alt="" /><span>{compact ? "CHS SOFTBALL" : "CHAMBLEE BULLDOGS SOFTBALL"}</span></a>
+  <nav aria-label="Main navigation">
+    <a href="#schedule">Schedule</a>
+    <details><summary>Teams</summary><div><a href="#varsity">Varsity</a><a href="#junior-varsity">Junior Varsity</a><a href="#middle-school">Middle School</a></div></details>
+    <a href="#sponsors">Sponsors</a><a href="#hub">Team Hub</a><a class="donate" href="#donate">Donate</a>
+  </nav>
+</header>
