@@ -1,0 +1,5 @@
+---
+interface Props { eyebrow: string; title: string; text: string; image: string; position?: string; }
+const { eyebrow, title, text, image, position = "center" } = Astro.props;
+---
+<section class="page-hero"><div><p>{eyebrow}</p><h1>{title}</h1><span>{text}</span></div><img src={`/images/${image}`} alt="" style={`object-position:${position}`} /></section>

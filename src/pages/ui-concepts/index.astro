@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro";
+const concepts = [
+  { href:"/ui-concepts/velocity", n:"01", name:"Velocity", note:"Immersive action photography and oversized type", image:"HPC_IMG_2249.JPG", cls:"velocity" },
+  { href:"/ui-concepts/dugout", n:"02", name:"The Dugout", note:"Friendly, useful, community-first mobile dashboard", image:"HPC_IMG_2253.JPG", cls:"dugout" },
+  { href:"/ui-concepts/editorial", n:"03", name:"Blue & Gold", note:"Premium editorial storytelling with a yearbook spirit", image:"HPC_IMG_2252.JPG", cls:"editorial" },
+  { href:"/ui-concepts/scoreboard", n:"04", name:"Scoreboard", note:"Fast, electric, game-information-first experience", image:"HPC_IMG_2103.JPG", cls:"scoreboard" },
+];
+---
+<Base title="UI Concepts — Chamblee Softball" bodyClass="concept-index">
+  <header class="concept-index-head"><a href="/">← Current site</a><span>CHAMBLEE SOFTBALL · DESIGN STUDY</span></header>
+  <main><div class="concept-index-intro"><p>Four different directions</p><h1>What should<br/>game day <em>feel</em> like?</h1><span>Open each full-page concept on desktop and phone. The differences are intentional—we’re looking for a strong reaction, not a safe compromise.</span></div>
+    <div class="concept-cards">{concepts.map((c) => <a class={`concept-card ${c.cls}`} href={c.href}><img src={`/images/${c.image}`} alt="" /><span class="number">{c.n}</span><div><h2>{c.name}</h2><p>{c.note}</p></div><b>View concept ↗</b></a>)}</div>
+  </main>
+</Base>
