@@ -14,3 +14,27 @@
 .production-site main [id]{scroll-margin-top:calc(var(--header-height) + 16px)}
 .production-site .mobile-menu>div{max-height:calc(100dvh - var(--header-height) - 16px);overflow-y:auto;overscroll-behavior:contain}
 @media(max-width:640px){.production-site{--header-height:76px}}
+
+/* Community articles */
+.articles-heading{padding:64px 0;background:var(--navy);color:#fff}
+.articles-heading p,.article-label{font:600 .8rem/1.5 Oswald,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.articles-heading p{color:var(--gold);margin-top:28px}
+.articles-heading h1{max-width:1000px;margin:16px 0;font:400 clamp(2rem,4.5vw,4rem)/1.12 "Archivo Black",Impact,sans-serif;overflow-wrap:break-word}
+.articles-heading span,.articles-heading a{font-family:"DM Sans",Arial,sans-serif}
+.articles-heading a{color:#fff}
+.article-list{padding-block:60px 90px}
+.article-list article{max-width:850px;background:#fff;padding:clamp(24px,4vw,48px);border-top:5px solid var(--gold)}
+.article-list h2,.home-article h2{font:400 clamp(1.6rem,3vw,2.4rem)/1.2 "Archivo Black",Impact,sans-serif}
+.article-list h2 a,.home-article h2 a{color:var(--navy);text-decoration:none}
+.article-list h2 a:hover,.home-article h2 a:hover{text-decoration:underline}
+.article-list p:not(.article-label),.home-article p:not(.article-label){font:400 1.05rem/1.7 "DM Sans",Arial,sans-serif}
+.article-read{display:inline-block;margin-top:12px;font-weight:600;color:var(--navy);text-underline-offset:4px}
+.article-body{max-width:800px;margin:auto;padding:40px 24px 80px;font:400 1.05rem/1.8 "DM Sans",Arial,sans-serif}
+.article-event{display:grid;gap:7px;margin-bottom:36px;padding:24px;background:#fff;border-left:5px solid var(--gold)}
+.article-lead{font-size:1.2rem}
+.article-body h2{margin-top:42px;font:400 clamp(1.5rem,3vw,2rem)/1.3 "Archivo Black",Impact,sans-serif}
+.article-body h2 span{color:#946500;white-space:nowrap}
+.article-body blockquote{margin:28px 0;padding:20px 24px;border-left:4px solid var(--gold);background:#fff}
+.home-article{margin-block:60px;padding-block:28px;border-top:5px solid var(--gold);border-bottom:1px solid var(--line)}
+.home-article>p{max-width:850px}
+@media(min-width:981px) and (max-width:1250px){.desktop-nav,.header-actions{display:none}.mobile-menu{display:block;margin-left:auto}}

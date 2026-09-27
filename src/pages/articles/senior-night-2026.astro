@@ -1,0 +1,35 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { seniorNight } from "../../data/articles";
+---
+<Base title={`${seniorNight.title} — Chamblee Softball`} description={seniorNight.excerpt} bodyClass="production-site">
+  <SiteHeader />
+  <main>
+    <article class="senior-article">
+      <header class="articles-heading"><div class="section-wrap"><a href="/articles">← All articles</a><p>SENIOR NIGHT · SEPTEMBER 28, 2026</p><h1>{seniorNight.title}</h1></div></header>
+      <div class="article-body">
+        <aside class="article-event" aria-label="Senior Night details"><strong>Monday, September 28</strong><span>Ceremony: <b>4:30 p.m.</b> · First pitch: <b>5:00 p.m.</b></span><span>Chamblee Softball Field · Free admission</span><span>Chamblee vs. Woodward Academy</span></aside>
+        <p class="article-lead">Four years of varsity softball. A friendship strengthened through practices, games, and unforgettable bus rides. And a shared commitment to helping the next generation discover the sport.</p>
+        <p>On September 28, Chamblee softball will celebrate seniors <strong>Anabelle Ritchey and Hannah Sullivan</strong> before the Bulldogs host Woodward Academy at Chamblee Softball Field. <strong>The ceremony begins at 4:30 p.m., with first pitch at 5:00 p.m.</strong> The early schedule allows time to recognize both seniors and make the most of the available daylight at the field, which does not have lights. Admission is free.</p>
+        <p>Families, students, alumni, and neighbors are invited to help recognize two players whose contributions reach beyond the diamond.</p>
+        <h2>Anabelle Ritchey <span>#7</span></h2>
+        <p>Anabelle has played softball for 10 years, including four seasons as a Chamblee varsity Bulldog. A member of National Honor Society and Fellowship of Christian Athletes, she also co-founded the CHS softball youth summer camp alongside Hannah.</p>
+        <p>Her favorite part of Chamblee softball has been sharing it with her best friend. From laughing through practices to celebrating wins, Anabelle treasures the memories she and Hannah have made and the chance to grow together as players and people.</p>
+        <p>The team’s lively bus rides have provided plenty of laughter, too. One memory that still stands out: a former teammate spilling an extra-large Dr Pepper on the ride to the state tournament and using her pajama pants to clean it up.</p>
+        <p>After graduation, Anabelle plans to study psychology in college, with hopes of becoming a pediatric occupational therapist. Her advice to younger players centers on kindness: be a good friend, support your teammates, stay confident, and remember that who you are off the field matters more than the player you are on it.</p>
+        <h2>Hannah Sullivan <span>#9</span></h2>
+        <p>Hannah, a third baseman and middle infielder, has played softball for 11 years and is completing her fourth season as a Chamblee varsity Bulldog. She belongs to Fellowship of Christian Athletes and National Honor Society and co-founded the CHS softball youth summer camp with Anabelle.</p>
+        <p>Her fondest team memory is winning the region championship her sophomore year after beating Decatur. The celebration included spraying sparkling cider and dumping water coolers on the coaches—a joyful finish to a moment she still treasures.</p>
+        <p>Just as meaningful has been playing alongside Anabelle, whom Hannah describes as a supportive, kind teammate and an amazing friend.</p>
+        <p>Hannah plans to attend college to study biomedical engineering or biology. She hopes to stay involved in softball and explore new hobbies, including running. Her message to younger teammates reflects the spirit she hopes to leave behind:</p>
+        <blockquote>“Your attitude is contagious, so choose to bring positive energy and lift up the people around you. Being a leader isn’t always about being the best player; it’s about setting an example and always supporting your teammates.”</blockquote>
+        <h2>Help celebrate our seniors</h2>
+        <p>Bring your family, your friends, and your Bulldog pride to Chamblee Softball Field on September 28! <strong>Please arrive before 4:30 p.m.</strong> so you’re ready to celebrate Anabelle and Hannah when the ceremony begins. Then stay to cheer on the Bulldogs against Woodward Academy at 5:00 p.m. Admission is free.</p>
+        <a class="article-read" href="/articles">← More from Chamblee Softball</a>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</Base>
