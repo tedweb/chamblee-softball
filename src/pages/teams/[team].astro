@@ -26,16 +26,16 @@ const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-sc
     <section class="team-summary section-wrap">
       <div><p>OVERALL RECORD</p><strong>{team.overall}</strong><small>{team.key === 'jv' ? 'Wins–losses' : 'Wins–losses–ties'}</small></div>
       {team.region && <div><p>REGION RECORD</p><strong>{team.region}</strong></div>}
-      <div><p>TEAM LINKS</p><a href={`/schedule?team=${team.slug}`}>Team schedule →</a><br/><a href="#coaches">Meet the coaches →</a></div>
+
     </section>
     <section class="roster-section section-wrap" id="roster">
-      <div class="section-heading"><p>{team.name.toUpperCase()} · {team.players.length} PLAYERS</p><h2>Meet the Bulldogs</h2></div>
+      <div class="section-heading"><p>{team.name.toUpperCase()} · {team.players.length} PLAYERS</p></div>
       <div class="roster-grid">{team.players.map(player => {
         const [name, number] = player.split(', #');
         return <article><b aria-label={number ? `Jersey number ${number}` : 'Jersey number not listed'}>{number ? `#${number}` : '—'}</b><span>{name}</span></article>;
       })}</div>
     </section>
-    <section class="coach-section" id="coaches"><img src="/images/IMG_6912.jpeg" alt="Chamblee Softball field"/><div><p>COACHING STAFF</p><h2>Leading the Bulldogs</h2><ul class="coach-list">{team.coaches.map(coach => {
+    <section class="coach-section" id="coaches"><div><p>COACHING STAFF</p><h2>Leading the Bulldogs</h2><ul class="coach-list">{team.coaches.map(coach => {
       const [name, role] = coach.split(', ');
       return <li><strong>{name}</strong><span>{role === 'HC' ? 'Head Coach' : 'Assistant Coach'}</span></li>;
     })}</ul><a href="/program">About the program →</a></div></section>
@@ -50,4 +50,14 @@ const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-sc
 .team-toggle a{padding:10px 14px;border:1px solid var(--navy);background:transparent;color:var(--navy);font-family:Oswald,Arial,sans-serif;font-size:1rem;font-weight:600;text-decoration:none}
 .team-toggle a.active{background:var(--navy);color:#fff}
 .team-toggle a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.team-summary{display:flex;gap:0;padding-top:16px;padding-bottom:24px}
+.team-summary>div{flex:0 1 240px;min-width:0;padding:12px 20px;border:0;border-right:1px solid #bfc8d5}
+.team-summary>div:first-child{padding-left:0}
+.team-summary>div:last-child{border-right:0}
+.team-summary strong{font-size:clamp(1.65rem,6vw,2.4rem)}
+.roster-section{padding-top:24px}
+.roster-grid{margin-top:20px}
+.coach-section{display:block}
+.coach-section>div{max-width:1180px;margin-inline:auto;padding:40px 24px}
 </style>
+
