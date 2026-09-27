@@ -1,0 +1,5 @@
+---
+import Base from "../layouts/Base.astro"; import SiteHeader from "../components/SiteHeader.astro"; import SiteFooter from "../components/SiteFooter.astro";
+const photos=["HPC_IMG_2249.JPG","HPC_IMG_2103.JPG","HPC_IMG_2253.JPG","IMG_2140.JPG","HPC_IMG_2252.JPG","IMG_2200.JPG","HPC_IMG_2256.JPG","IMG_2230.JPG","IMG_6920.jpeg","HPC_IMG_2185.JPG","IMG_6912.jpeg","IMG_6924.jpeg"];
+---
+<Base title="Photo Gallery — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main><section class="gallery-head"><p>2026 PHOTO GALLERY</p><h1>Blue, gold,<br/><em>and all grit.</em></h1><span>Moments from the circle, the plate, and the teammates who make every inning count.</span></section><section class="photo-grid">{photos.map((photo,i)=><figure class:list={{wide:[2,6,10].includes(i)}}><img src={`/images/${photo}`} alt={`Chamblee Softball game photo ${i+1}`} loading="lazy"/></figure>)}</section></main><SiteFooter /></Base>

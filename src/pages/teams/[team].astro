@@ -1,0 +1,13 @@
+---
+import Base from "../../layouts/Base.astro"; import SiteHeader from "../../components/SiteHeader.astro"; import SiteFooter from "../../components/SiteFooter.astro"; import PageHero from "../../components/PageHero.astro";
+export function getStaticPaths(){
+  const teams = {
+    "varsity": { name:"Varsity", record:"7–2", region:"3–0 · 1st", image:"HPC_IMG_2256.JPG", blurb:"Experienced. Composed. Ready for every inning.", coach:"Head Coach", roster:["#3 · Infield","#5 · Utility","#6 · Infield","#7 · Catcher","#11 · Outfield","#16 · Infield","#18 · Pitcher","#23 · Outfield","#75 · Utility","#99 · Outfield"] },
+    "junior-varsity": { name:"Junior Varsity", record:"5–3", region:"Development", image:"HPC_IMG_2253.JPG", blurb:"Building confidence, fundamentals, and the next generation of Bulldogs.", coach:"JV Head Coach", roster:["#2 · Infield","#4 · Outfield","#8 · Pitcher","#10 · Catcher","#12 · Utility","#14 · Infield","#17 · Outfield","#20 · Pitcher"] },
+    "middle-school": { name:"Middle School", record:"4–1", region:"Development", image:"HPC_IMG_2252.JPG", blurb:"Learning the game, competing together, and growing the Bulldog tradition.", coach:"Middle School Head Coach", roster:["#1 · Infield","#6 · Pitcher","#9 · Catcher","#13 · Outfield","#15 · Utility","#19 · Infield","#21 · Outfield","#24 · Pitcher"] },
+  };
+  return Object.entries(teams).map(([slug,props])=>({params:{team:slug},props}));
+}
+const team = Astro.props;
+---
+<Base title={`${team.name} — Chamblee Softball`} bodyClass="production-site"><SiteHeader /><main><PageHero eyebrow="CHAMBLEE BULLDOGS" title={team.name} text={team.blurb} image={team.image} /><section class="team-summary section-wrap"><div><p>2026 RECORD</p><strong>{team.record}</strong></div><div><p>REGION</p><strong>{team.region}</strong></div><div><p>TEAM LINKS</p><a href="/schedule">Schedule →</a></div></section><section class="roster-section section-wrap"><div class="section-heading"><p>THE ROSTER</p><h2>Meet the Bulldogs</h2><span>Player names and profiles will be added after the official roster is finalized.</span></div><div class="roster-grid">{team.roster.map((player,i)=><article><b>{String(i+1).padStart(2,"0")}</b><span>{player}</span><small>Player profile coming soon</small></article>)}</div></section><section class="coach-section"><img src="/images/IMG_6912.jpeg" alt="Chamblee Softball field"/><div><p>COACHING STAFF</p><h2>{team.coach}</h2><span>Coach biography, contact information, and staff details will be added before launch.</span><a href="/program">About the program →</a></div></section></main><SiteFooter /></Base>
