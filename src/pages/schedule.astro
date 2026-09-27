@@ -9,7 +9,7 @@ const time = (value: string) => new Date(value).toLocaleTimeString('en-US', { ti
 const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school', 'Middle School'], ['all', 'All teams']];
 ---
 <Base title="Schedule — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main>
-  <section class="schedule-heading section-wrap"><p>2026 SEASON</p><h1>Schedule</h1></section>
+  <section class="schedule-heading"><p>2026 SEASON</p><h1>Schedule</h1></section>
   <section class="schedule-section section-wrap">
     <div class="calendar-downloads">{schedule.calendars.map(calendar => <a href={`/calendars/${calendar.team}.ics`} data-calendar-team={calendar.team} hidden={calendar.team !== 'varsity'} download>Download {calendar.name} calendar</a>)}</div>
     <p class="data-note">GameChanger schedule snapshot · Updated {date(schedule.updated)}. Times are Eastern. Downloaded calendars do not update automatically.</p>
@@ -41,4 +41,5 @@ const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school
   selectTeam(new URLSearchParams(window.location.search).get('team') ?? 'varsity');
 </script>
 
-<style>.schedule-heading{padding-top:50px}.schedule-heading p{font-size:.875rem;letter-spacing:.15em}.schedule-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}.calendar-downloads a[hidden]{display:none}</style>
+<style>.schedule-heading{padding:50px max(24px,calc((100% - 1132px)/2));background:var(--navy);color:#fff}.schedule-heading p{font-size:.875rem;letter-spacing:.15em}.schedule-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}.calendar-downloads a[hidden]{display:none}</style>
+
