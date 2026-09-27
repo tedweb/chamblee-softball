@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import PageHero from '../../components/PageHero.astro';
+
 import { seasonRecords } from '../../data/season';
 import data from '../../data/teams.json';
 export function getStaticPaths() {
@@ -17,10 +17,12 @@ export function getStaticPaths() {
   }}));
 }
 const team = Astro.props;
+const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-school", "Middle School"]];
 ---
 <Base title={`${team.name} — Chamblee Softball`} bodyClass="production-site">
   <SiteHeader /><main>
-    <PageHero eyebrow="CHAMBLEE BULLDOGS" title={team.name} text={team.blurb} image={team.image} />
+    <section class="teams-heading"><p>2026 SEASON</p><h1>Meet the Bulldogs</h1></section>
+    <nav class="team-toggle section-wrap" aria-label="Select a team">{teamLinks.map(([slug, label]) => <a href={`/teams/${slug}`} class:list={{active: team.slug === slug}} aria-current={team.slug === slug ? "page" : undefined}>{label}</a>)}</nav>
     <section class="team-summary section-wrap">
       <div><p>OVERALL RECORD</p><strong>{team.overall}</strong><small>{team.key === 'jv' ? 'Wins–losses' : 'Wins–losses–ties'}</small></div>
       {team.region && <div><p>REGION RECORD</p><strong>{team.region}</strong></div>}
@@ -39,3 +41,13 @@ const team = Astro.props;
     })}</ul><a href="/program">About the program →</a></div></section>
   </main><SiteFooter />
 </Base>
+
+<style>
+.teams-heading{padding:50px max(24px,calc((100% - 1132px)/2));background:var(--navy);color:#fff}
+.teams-heading p{font-size:.875rem;letter-spacing:.15em}
+.teams-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}
+.team-toggle{display:flex;flex-wrap:wrap;padding-top:40px}
+.team-toggle a{padding:10px 14px;border:1px solid var(--navy);background:transparent;color:var(--navy);font-family:Oswald,Arial,sans-serif;font-size:1rem;font-weight:600;text-decoration:none}
+.team-toggle a.active{background:var(--navy);color:#fff}
+.team-toggle a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style>
