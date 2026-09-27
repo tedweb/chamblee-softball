@@ -2,19 +2,19 @@
 import Base from '../layouts/Base.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
-import PageHero from '../components/PageHero.astro';
+
 import schedule from '../data/schedule.json';
 const date = (value: string) => new Date(value).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric' });
 const time = (value: string) => new Date(value).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
-const teams = [['all', 'All teams'], ['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school', 'Middle School']];
+const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school', 'Middle School'], ['all', 'All teams']];
 ---
 <Base title="Schedule — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main>
-  <PageHero eyebrow="2026 SEASON" title="Schedule" text="Follow the Bulldogs from first pitch to the final inning." image="IMG_6912.jpeg" />
+  <section class="schedule-heading section-wrap"><p>2026 SEASON</p><h1>Schedule</h1></section>
   <section class="schedule-section section-wrap">
-    <div class="calendar-downloads">{schedule.calendars.map(calendar => <a href={`/calendars/${calendar.team}.ics`} download>Download {calendar.name} calendar</a>)}</div>
+    <div class="calendar-downloads">{schedule.calendars.map(calendar => <a href={`/calendars/${calendar.team}.ics`} data-calendar-team={calendar.team} hidden={calendar.team !== 'varsity'} download>Download {calendar.name} calendar</a>)}</div>
     <p class="data-note">GameChanger schedule snapshot · Updated {date(schedule.updated)}. Times are Eastern. Downloaded calendars do not update automatically.</p>
-    <div class="schedule-tools"><div role="group" aria-label="Filter schedule by team">{teams.map(([value, label]) => <button type="button" data-team-filter={value} class:list={{active: value === 'all'}} aria-pressed={value === 'all'}>{label}</button>)}</div><span id="schedule-count" aria-live="polite">{schedule.games.length} scheduled games</span></div>
-    <div class="schedule-list">{schedule.games.map(game => <article class="calendar-game" data-team={game.team}>
+    <div class="schedule-tools"><div role="group" aria-label="Filter schedule by team">{teams.map(([value, label]) => <button type="button" data-team-filter={value} class:list={{active: value === 'varsity'}} aria-pressed={value === 'varsity'}>{label}</button>)}</div><span id="schedule-count" aria-live="polite">{schedule.games.filter(game => game.team === 'varsity').length} scheduled games</span></div>
+    <div class="schedule-list">{schedule.games.map(game => <article class="calendar-game" data-team={game.team} hidden={game.team !== 'varsity'}>
       <time datetime={game.start}>{date(game.start)}</time><span class="calendar-team">{game.name}</span>
       <div><h2>{game.title}</h2>{game.location && <p class="game-location">{game.location}</p>}</div>
       <strong>{game.status === 'CANCELLED' ? 'Cancelled' : time(game.start)}</strong>
@@ -26,16 +26,19 @@ const teams = [['all', 'All teams'], ['varsity', 'Varsity'], ['junior-varsity', 
   const buttons = document.querySelectorAll<HTMLButtonElement>('[data-team-filter]');
   const games = document.querySelectorAll<HTMLElement>('.calendar-game');
   function selectTeam(team: string) {
-    if (!Array.from(buttons).some(button => button.dataset.teamFilter === team)) team = 'all';
+    if (!Array.from(buttons).some(button => button.dataset.teamFilter === team)) team = 'varsity';
     buttons.forEach(button => { const selected = button.dataset.teamFilter === team; button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected)); });
+    document.querySelectorAll<HTMLElement>('[data-calendar-team]').forEach(link => { link.hidden = link.dataset.calendarTeam !== team; });
     let count = 0;
     games.forEach(game => { game.hidden = team !== 'all' && game.dataset.team !== team; if (!game.hidden) count++; });
     const countLabel = document.getElementById('schedule-count');
     if (countLabel) countLabel.textContent = `${count} scheduled games`;
   }
   buttons.forEach(button => button.addEventListener('click', () => {
-    const team = button.dataset.teamFilter ?? 'all'; selectTeam(team);
+    const team = button.dataset.teamFilter ?? 'varsity'; selectTeam(team);
     const url = new URL(window.location.href); url.searchParams.set('team', team); history.replaceState(null, '', url);
   }));
-  selectTeam(new URLSearchParams(window.location.search).get('team') ?? 'all');
+  selectTeam(new URLSearchParams(window.location.search).get('team') ?? 'varsity');
 </script>
+
+<style>.schedule-heading{padding-top:50px}.schedule-heading p{font-size:.875rem;letter-spacing:.15em}.schedule-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}.calendar-downloads a[hidden]{display:none}</style>
