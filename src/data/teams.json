@@ -1,0 +1,66 @@
+{
+  "coaches": {
+    "varsity": [
+      "Nathaniel Berryman, HC",
+      "John Phelps, AC"
+    ],
+    "jv": [
+      "Douglas Holtzman, HC",
+      "Alan Looper, AC"
+    ],
+    "middle": [
+      "Chris Yarbrough, HC",
+      "Lew Henry, AC"
+    ]
+  },
+  "players": {
+    "varsity": [
+      "Anabelle Ritchey, #7",
+      "Brooke Williams, #13",
+      "Brooke Winokur, #18",
+      "Callie DelFavero, #5",
+      "Clara Godwin, #16",
+      "Ellasyn Bair, #23",
+      "G Gardner, #27",
+      "Hannah Sullivan, #9",
+      "Kayte Henry, #3",
+      "Lilah Scher, #11",
+      "M Bradley, #22",
+      "Madison Jones, #99",
+      "Norah Yarbrough, #75",
+      "Sadie Thomson, #6",
+      "Sarah Lewis"
+    ],
+    "jv": [
+      "A Grubman, #21",
+      "A Carpenter, #55",
+      "A Allison, #95",
+      "B Williams, #13",
+      "G Gardner, #27",
+      "G Gardner, #10",
+      "K Henry, #3",
+      "L Mueller, #88",
+      "M Bradley, #22",
+      "M Holtzman, #2",
+      "N Yarbrough, #75",
+      "S Lewis, #29",
+      "V Owoade, #4"
+    ],
+    "middle": [
+      "Ada K, #4",
+      "Anna H, #10",
+      "Ava L, #00",
+      "Cassidy T, #9",
+      "Charlie O, #99",
+      "Elyse R, #3",
+      "Grace C, #5",
+      "Harper L, #1",
+      "Lilah E, #11",
+      "Maddox H, #6",
+      "Maggie D, #31",
+      "Mary Emerson H, #2",
+      "Presley Y, #7",
+      "Zaara L, #24"
+    ]
+  }
+}

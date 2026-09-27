@@ -1,0 +1,470 @@
+{
+  "updated": "2026-09-27T08:38:54.478Z",
+  "calendars": [
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "count": 31
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "count": 14
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "count": 11
+    }
+  ],
+  "games": [
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Marist Varsity",
+      "start": "2026-07-30T16:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Woodward",
+      "start": "2026-08-03T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ North Springs",
+      "start": "2026-08-04T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Lakeside Junior Varsity Vikings",
+      "start": "2026-08-06T21:30:00Z",
+      "location": "Chamblee High School\nChamblee, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Collins Hill JV",
+      "start": "2026-08-07T20:00:00Z",
+      "location": "Chamblee High School\nChamblee, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Collins Hill",
+      "start": "2026-08-07T22:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ South Gwinnett",
+      "start": "2026-08-10T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Riverwood Varsity Raiders",
+      "start": "2026-08-12T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Lakeside Junior Varsity Vikings",
+      "start": "2026-08-12T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Riverwood JV",
+      "start": "2026-08-13T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Lakeside Varsity Vikings",
+      "start": "2026-08-13T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 @ Marist War Eagles - MS Team - Fall 26",
+      "start": "2026-08-13T21:30:00Z",
+      "location": "Marist School\nAtlanta, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Riverwood JV",
+      "start": "2026-08-13T22:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Centennial",
+      "start": "2026-08-17T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 @ Woodward",
+      "start": "2026-08-17T21:30:00Z",
+      "location": "Saint Howard Drive\nCollege Park, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Shiloh",
+      "start": "2026-08-18T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Decatur",
+      "start": "2026-08-18T21:30:00Z",
+      "location": "Chamblee High School\nChamblee, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Midtown",
+      "start": "2026-08-20T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Marist Junior Varsity War Eagles",
+      "start": "2026-08-20T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs Peachtree Jr Wildcats Gold 26",
+      "start": "2026-08-22T14:00:00Z",
+      "location": "Chamblee High School\nChamblee, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Greater Atlanta Christian",
+      "start": "2026-08-24T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Mount Vernon Varsity Mustangs",
+      "start": "2026-08-24T21:30:00Z",
+      "location": "Mount Vernon School\nAtlanta, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Riverwood Varsity Raiders",
+      "start": "2026-08-25T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs North Springs",
+      "start": "2026-08-26T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Lakeside Junior Varsity Vikings",
+      "start": "2026-08-26T21:30:00Z",
+      "location": "Lakeside High School\nAtlanta, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Alcovy",
+      "start": "2026-08-27T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 @ St. Pius X - Middle School",
+      "start": "2026-08-29T14:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Meadowcreek",
+      "start": "2026-08-31T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Dunwoody",
+      "start": "2026-08-31T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Dunwoody",
+      "start": "2026-09-01T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Dunwoody",
+      "start": "2026-09-01T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Marist Junior Varsity War Eagles",
+      "start": "2026-09-02T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Decatur",
+      "start": "2026-09-03T21:30:00Z",
+      "location": "307 Feld Ave\nDecatur GA",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs Woodward",
+      "start": "2026-09-03T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 @ St Francis",
+      "start": "2026-09-08T21:00:00Z",
+      "location": "9375 Willeo Rd\nRoswell, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Heritage",
+      "start": "2026-09-08T21:30:00Z",
+      "location": "2400 Granade Rd\nConyers GA",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs vs Lakeside Junior Varsity Vikings",
+      "start": "2026-09-09T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Meadowcreek",
+      "start": "2026-09-10T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Centennial",
+      "start": "2026-09-14T22:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Lakeside Varsity Vikings",
+      "start": "2026-09-15T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "junior-varsity",
+      "name": "Junior Varsity",
+      "title": "Chamblee Junior Varsity Bulldogs @ Collins Hill JV",
+      "start": "2026-09-16T20:00:00Z",
+      "location": "Collins Hill High School\nSuwanee, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Collins Hill",
+      "start": "2026-09-16T22:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 @ Peachtree Jr Wildcats Gold 26",
+      "start": "2026-09-17T21:00:00Z",
+      "location": "Brook Run Park Baseball Fields\nDunwoody, GA, United States",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Shiloh",
+      "start": "2026-09-17T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs Marist War Eagles - MS Team - Fall 26",
+      "start": "2026-09-21T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Midtown",
+      "start": "2026-09-22T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs Mt Vernon",
+      "start": "2026-09-22T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Woodward",
+      "start": "2026-09-28T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Alcovy",
+      "start": "2026-09-29T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs St. Pius X - Middle School",
+      "start": "2026-09-29T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Dunwoody",
+      "start": "2026-10-01T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Greater Atlanta Christian",
+      "start": "2026-10-05T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "middle-school",
+      "name": "Middle School",
+      "title": "CMS Bulldogs 2026 vs Galloway",
+      "start": "2026-10-05T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Decatur",
+      "start": "2026-10-06T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs @ Marist Varsity",
+      "start": "2026-10-07T21:30:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    },
+    {
+      "team": "varsity",
+      "name": "Varsity",
+      "title": "Chamblee Varsity Bulldogs vs Heritage",
+      "start": "2026-10-08T21:00:00Z",
+      "location": "",
+      "status": "CONFIRMED"
+    }
+  ]
+}

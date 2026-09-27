@@ -39,3 +39,9 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# Private GameChanger subscription URLs. Publish only sanitized calendar events.
+/docs/config.json
+
+# Generated Astro metadata
+/.astro/
