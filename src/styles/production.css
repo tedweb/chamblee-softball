@@ -44,6 +44,9 @@
 @media(max-width:640px){.primary-home-article{width:calc(100% - 32px);padding:24px}.primary-home-article h2{font-size:1.6rem}}
 
 /* Keep the Donate button visible when the navigation collapses into the Menu button. */
-@media(max-width:1250px){.production-site .header-actions{display:flex;margin-left:auto}.production-site .header-actions .live-link{display:none}.production-site .mobile-menu{margin-left:0}}
-@media(max-width:640px){.production-site .main-header{gap:12px}.production-site .main-brand{min-width:0}.production-site .give-link{padding:10px 14px}}
+@media(max-width:1250px){.production-site .header-actions{display:flex;order:2;margin-left:-26px}.production-site .header-actions .live-link{display:none}.production-site .mobile-menu{order:1;margin-left:auto}}
+@media(max-width:640px){.production-site .main-header{gap:12px}.production-site .header-actions{margin-left:-4px}.production-site .main-brand{min-width:0}.production-site .give-link{padding:10px 14px}}
 @media(max-width:360px){.production-site .main-brand span{display:none}}
+
+/* Page hero without an image spans the full width. */
+.page-hero.no-image{grid-template-columns:1fr;min-height:0}.page-hero.no-image>div{order:0}
