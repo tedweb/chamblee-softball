@@ -42,3 +42,8 @@
 .primary-home-article h2{line-height:1.2}.primary-home-article .article-read{color:#976700}.primary-home-article .article-label{margin-top:0}
 @media(max-width:980px){.primary-home-article{margin-top:-28px}}
 @media(max-width:640px){.primary-home-article{width:calc(100% - 32px);padding:24px}.primary-home-article h2{font-size:1.6rem}}
+
+/* Keep the Donate button visible when the navigation collapses into the Menu button. */
+@media(max-width:1250px){.production-site .header-actions{display:flex;margin-left:auto}.production-site .header-actions .live-link{display:none}.production-site .mobile-menu{margin-left:0}}
+@media(max-width:640px){.production-site .main-header{gap:12px}.production-site .main-brand{min-width:0}.production-site .give-link{padding:10px 14px}}
+@media(max-width:360px){.production-site .main-brand span{display:none}}
