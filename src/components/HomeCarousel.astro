@@ -1,6 +1,7 @@
 ---
 import { readdirSync } from "node:fs";
-const photos = readdirSync(new URL("../../public/images/", import.meta.url))
+import { join } from "node:path";
+const photos = readdirSync(join(process.cwd(), "public/images"))
   .filter(name => name.startsWith("FP_") && /\.(jpe?g|png|webp|avif|gif)$/i.test(name)).sort();
 ---
 {photos.length > 0 && <section class="home-carousel" aria-label="Chamblee Softball photos" aria-roledescription="carousel">
