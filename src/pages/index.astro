@@ -3,6 +3,7 @@ import { seniorNight } from "../data/articles";
 import schedule from "../data/schedule.json";
 import LastGameCard from "../components/LastGameCard.astro";
 import HomeCarousel from "../components/HomeCarousel.astro";
+import SponsorCarousel from "../components/SponsorCarousel.astro";
 import { lastGame } from "../data/last-game";
 import Base from "../layouts/Base.astro"; import SiteHeader from "../components/SiteHeader.astro"; import SiteFooter from "../components/SiteFooter.astro";
 const nextGame = schedule.games.find(game => new Date(game.start) >= new Date() && game.status !== "CANCELLED");
@@ -11,12 +12,11 @@ const nextGame = schedule.games.find(game => new Date(game.start) >= new Date() 
   <section class="home-dugout"><div><p>WELCOME TO THE BLUE AND GOLD</p><h1>Poise in the circle.<br/><em>Power at the plate.</em></h1><span>The official home of Chamblee High School Softball—Varsity, Junior Varsity, Middle School, and the families who back every inning.</span></div><HomeCarousel /></section>
   <section class="primary-home-article notice-card" aria-label="Latest article"><p class="article-label">SENIOR NIGHT · SEPTEMBER 28</p><h2><a href={seniorNight.href}>{seniorNight.title}</a></h2><p>{seniorNight.excerpt}</p><a class="article-read" href={seniorNight.href}>Read the article →</a></section>
   <section class="home-dashboard section-wrap">
+    <SponsorCarousel />
     <LastGameCard {...lastGame} />
     <article class="next-card"><p>NEXT ON THE CALENDAR</p><h2>{nextGame?.title ?? "Follow the Bulldogs"}</h2><span>{nextGame ? new Date(nextGame.start).toLocaleString("en-US", {timeZone:"America/New_York", month:"long", day:"numeric", hour:"numeric", minute:"2-digit"}) + " ET" : "Visit the schedule for the season calendar."}</span><a href="/schedule">Full schedule →</a></article>
   </section>
-  <section class="home-story" id="news"><div><p>FROM THE FIELD</p><h2>Every inning,<br/>together.</h2><span>Chamblee’s start is built on preparation, trust, and a group that refuses to give away an inning.</span><a href="/program">Meet the program →</a></div><img src="/images/IMG_2256.JPG" alt="Chamblee players walking together after a game" /></section>
-  <section class="sponsor-band"><div><p>FEATURED COMMUNITY PARTNER</p><h2>Brookhaven Family Dentistry</h2><span>Proudly helping Chamblee athletes smile brighter.</span></div><a href="/support#sponsors">Become a sponsor →</a></section>
-</main><SiteFooter /></Base>
+  <section class="home-story" id="news"><div><p>FROM THE FIELD</p><h2>Every inning,<br/>together.</h2><span>Chamblee’s start is built on preparation, trust, and a group that refuses to give away an inning.</span><a href="/program">Meet the program →</a></div><img src="/images/IMG_2256.JPG" alt="Chamblee players walking together after a game" /></section></main><SiteFooter /></Base>
 
 
 

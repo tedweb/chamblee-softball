@@ -1,0 +1,98 @@
+---
+import data from "../../docs/sponsors.json";
+
+interface Sponsor { name: string; url: string; image: string; tagline: string; status: string; level: string; }
+const sponsors = (data.sponsors as Sponsor[]).filter(sponsor => sponsor.status === "active");
+---
+{sponsors.length > 0 && <article class="sponsor-card" aria-labelledby="sponsor-card-heading" aria-roledescription="carousel">
+  <div class="sponsor-card-head">
+    <p id="sponsor-card-heading">OUR SPONSORS</p>
+    {sponsors.length > 1 && <div class="sponsor-controls" hidden>
+      <button type="button" data-previous aria-label="Previous sponsor">←</button>
+      <span data-counter aria-live="off">1 / {sponsors.length}</span>
+      <button type="button" data-next aria-label="Next sponsor">→</button>
+      <button type="button" data-toggle>Pause</button>
+    </div>}
+  </div>
+  <div class="sponsor-slides">
+    {sponsors.map((sponsor, index) => <div class:list={["sponsor-slide", { active: index === 0 }]} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${sponsors.length}`} aria-hidden={index !== 0 ? "true" : "false"}>
+      {sponsor.image && (sponsor.url
+        ? <a class="sponsor-logo" href={sponsor.url} target="_blank" rel="noopener" tabindex={index !== 0 ? -1 : undefined}><img src={sponsor.image} alt={`${sponsor.name} logo`} loading="lazy" /></a>
+        : <span class="sponsor-logo"><img src={sponsor.image} alt={`${sponsor.name} logo`} loading="lazy" /></span>)}
+      <div>
+        {sponsor.level && <small>{sponsor.level} partner</small>}
+        <h2>{sponsor.url ? <a href={sponsor.url} target="_blank" rel="noopener" tabindex={index !== 0 ? -1 : undefined}>{sponsor.name}</a> : sponsor.name}</h2>
+        {sponsor.tagline && <span>{sponsor.tagline}</span>}
+      </div>
+    </div>)}
+  </div>
+</article>}
+
+<style>
+  .sponsor-card { grid-column: 1 / -1; }
+  .sponsor-card-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .sponsor-card-head p { margin: 0; }
+  .sponsor-controls { display: flex; align-items: center; gap: 4px; }
+  .sponsor-controls[hidden] { display: none; }
+  .sponsor-controls button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 24px; background: #fff; color: var(--navy); font: 600 14px/1.2 Arial, sans-serif; cursor: pointer; }
+  .sponsor-controls button:hover { background: var(--paper); }
+  .sponsor-controls button:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
+  .sponsor-controls span { padding: 0 6px; font: 400 14px Arial, sans-serif; }
+  .sponsor-slides { display: grid; margin-top: 20px; }
+  .sponsor-slide { grid-area: 1 / 1; display: flex; align-items: center; gap: 32px; opacity: 0; visibility: hidden; transition: opacity 500ms ease, visibility 500ms; }
+  .sponsor-slide.active { opacity: 1; visibility: visible; }
+  .sponsor-logo { flex: 0 0 auto; display: grid; place-items: center; width: min(320px, 40%); margin: 0; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+  .sponsor-logo img { max-width: 100%; max-height: 90px; object-fit: contain; }
+  .sponsor-slide small { display: block; color: #976700; font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+  .sponsor-slide h2 { margin: 6px 0; font: 400 clamp(1.4rem, 2.5vw, 2rem)/1.15 "Archivo Black", Impact, sans-serif; text-transform: uppercase; }
+  .sponsor-slide h2 a { margin: 0; color: inherit; text-decoration: none; }
+  .sponsor-slide h2 a:hover { text-decoration: underline; }
+  .sponsor-slide span { font: 400 1rem/1.55 "DM Sans", Arial, sans-serif; }
+  @media (max-width: 640px) {
+    .sponsor-slide { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .sponsor-logo { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sponsor-slide { transition: none; } }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".sponsor-card").forEach(card => {
+    const slides = Array.from(card.querySelectorAll<HTMLElement>(".sponsor-slide"));
+    const controls = card.querySelector<HTMLElement>(".sponsor-controls");
+    const toggle = card.querySelector<HTMLButtonElement>("[data-toggle]");
+    const counter = card.querySelector<HTMLElement>("[data-counter]");
+    if (slides.length < 2 || !controls || !toggle || !counter) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let paused = reducedMotion.matches;
+    let hovered = false;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    function show(index: number) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const active = i === current;
+        slide.classList.toggle("active", active);
+        slide.setAttribute("aria-hidden", String(!active));
+        slide.querySelectorAll("a").forEach(link => active ? link.removeAttribute("tabindex") : link.setAttribute("tabindex", "-1"));
+      });
+      counter!.textContent = `${current + 1} / ${slides.length}`;
+    }
+    function sync() {
+      clearInterval(timer);
+      toggle!.textContent = paused ? "Play" : "Pause";
+      toggle!.setAttribute("aria-label", paused ? "Play sponsor rotation" : "Pause sponsor rotation");
+      if (!paused && !hovered && !document.hidden) timer = setInterval(() => show(current + 1), 6000);
+    }
+    controls.hidden = false;
+    card.querySelector("[data-previous]")?.addEventListener("click", () => { show(current - 1); sync(); });
+    card.querySelector("[data-next]")?.addEventListener("click", () => { show(current + 1); sync(); });
+    toggle.addEventListener("click", () => { paused = !paused; sync(); });
+    card.addEventListener("mouseenter", () => { hovered = true; sync(); });
+    card.addEventListener("mouseleave", () => { hovered = false; sync(); });
+    // Keyboard focus stops rotation until the visitor explicitly restarts it.
+    card.addEventListener("focusin", () => { paused = true; sync(); });
+    reducedMotion.addEventListener("change", () => { paused = reducedMotion.matches; sync(); });
+    document.addEventListener("visibilitychange", sync);
+    sync();
+  });
+</script>
