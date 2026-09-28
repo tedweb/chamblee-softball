@@ -22,7 +22,7 @@ Staff: Mike Williams, Matthew Ritchey, Aubrey Scher
 - Brooke Winokur, #18
 - Callie DelFavero, #5
 - Ellasyn Bair, #23
-- G Gardner, #27
+- Grayson Gardner, #10, #27
 - Hannah Sullivan, #9
 - Kayte Henry, #3
 - Lilah Scher, #11
@@ -80,8 +80,7 @@ Staff: Mike Williams, Brandy Carpenter, Matthew Ritchey, Doug Holtzman
 - A Carpenter, #55
 - A Allison, #95
 - B Williams, #13
-- G Gardner, #27
-- G Gardner, #10
+- G Gardner, #10, #27
 - K Henry, #3
 - L Mueller, #88
 - M Bradley, #22

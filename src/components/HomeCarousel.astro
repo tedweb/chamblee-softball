@@ -1,0 +1,69 @@
+---
+import { readdirSync } from "node:fs";
+const photos = readdirSync(new URL("../../public/images/", import.meta.url))
+  .filter(name => name.startsWith("FP_") && /\.(jpe?g|png|webp|avif|gif)$/i.test(name)).sort();
+---
+{photos.length > 0 && <section class="home-carousel" aria-label="Chamblee Softball photos" aria-roledescription="carousel">
+  {photos.map((photo, index) => <div class:list={["slide", { active: index === 0 }]} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${photos.length}`} aria-hidden={index !== 0}>
+    <img src={`/images/${encodeURIComponent(photo)}`} alt={`Chamblee Softball team photo ${index + 1}`} loading={index === 0 ? "eager" : "lazy"} fetchpriority={index === 0 ? "high" : "auto"} />
+  </div>)}
+  {photos.length > 1 && <div class="controls" hidden>
+    <button type="button" data-previous aria-label="Previous photo">←</button>
+    <span data-counter aria-live="off">1 / {photos.length}</span>
+    <button type="button" data-next aria-label="Next photo">→</button>
+    <button type="button" data-toggle>Pause slideshow</button>
+  </div>}
+</section>}
+<style>
+  .home-carousel { position: relative; min-width: 0; min-height: 620px; overflow: hidden; background: var(--navy); }
+  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms ease; }
+  .slide.active { opacity: 1; }
+  .slide img { width: 100%; height: 100%; object-fit: cover; }
+  .controls { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 30px; background: #102f65ed; color: #fff; white-space: nowrap; }
+  .controls[hidden] { display: none; }
+  .controls button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 24px; background: transparent; color: inherit; font: 600 14px/1.2 Arial, sans-serif; cursor: pointer; }
+  .controls button:hover { background: #ffffff26; }
+  .controls button:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
+  .controls span { font: 400 14px Arial, sans-serif; }
+  @media (max-width: 980px) { .home-carousel { min-height: 600px; } }
+  @media (max-width: 640px) { .home-carousel { min-height: 470px; } }
+  @media (prefers-reduced-motion: reduce) { .slide { transition: none; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLElement>(".home-carousel").forEach(carousel => {
+    const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".slide"));
+    const controls = carousel.querySelector<HTMLElement>(".controls");
+    const toggle = carousel.querySelector<HTMLButtonElement>("[data-toggle]");
+    const counter = carousel.querySelector<HTMLElement>("[data-counter]");
+    if (slides.length < 2 || !controls || !toggle || !counter) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let paused = reducedMotion.matches;
+    let hovered = false;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | undefined;
+    function show(index: number) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === current);
+        slide.setAttribute("aria-hidden", String(i !== current));
+      });
+      counter!.textContent = `${current + 1} / ${slides.length}`;
+    }
+    function sync() {
+      clearInterval(timer);
+      toggle!.textContent = paused ? "Play slideshow" : "Pause slideshow";
+      if (!paused && !hovered && !document.hidden) timer = setInterval(() => show(current + 1), 5000);
+    }
+    controls.hidden = false;
+    carousel.querySelector("[data-previous]")?.addEventListener("click", () => { show(current - 1); sync(); });
+    carousel.querySelector("[data-next]")?.addEventListener("click", () => { show(current + 1); sync(); });
+    toggle.addEventListener("click", () => { paused = !paused; sync(); });
+    carousel.addEventListener("mouseenter", () => { hovered = true; sync(); });
+    carousel.addEventListener("mouseleave", () => { hovered = false; sync(); });
+    // Keyboard interaction stops rotation until the visitor explicitly starts it again.
+    carousel.addEventListener("focusin", () => { paused = true; sync(); });
+    reducedMotion.addEventListener("change", () => { paused = reducedMotion.matches; sync(); });
+    document.addEventListener("visibilitychange", sync);
+    sync();
+  });
+</script>
