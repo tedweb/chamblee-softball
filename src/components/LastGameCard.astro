@@ -1,0 +1,25 @@
+---
+interface Props {
+  team: string;
+  opponent: string;
+  chambleeScore: number;
+  opponentScore: number;
+  date?: string;
+}
+const { team, opponent, chambleeScore, opponentScore, date } = Astro.props;
+const outcome = chambleeScore > opponentScore ? "Bulldogs win" : chambleeScore < opponentScore ? "Bulldogs loss" : "Tie game";
+---
+<article class="last-game-card" aria-labelledby="last-game-heading">
+  <p id="last-game-heading">LAST GAME - FINAL</p>
+  <span class="game-context">{team}{date ? ` · ${date}` : ""}</span>
+  <div class="final-score"><span>Chamblee</span><strong>{chambleeScore}</strong></div>
+  <div class="final-score"><span>{opponent}</span><strong>{opponentScore}</strong></div>
+  <b class="game-outcome">{outcome}</b>
+  <a href="/schedule">Full schedule →</a>
+</article>
+<style>
+  .game-context{display:block;font:400 .9rem/1.5 "DM Sans",Arial,sans-serif;margin-bottom:12px}
+  .final-score{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--line);font-size:1.3rem}
+  .final-score strong{font:400 2.2rem/1.2 "Archivo Black",Impact,sans-serif}
+  .game-outcome{display:block;margin-top:18px}
+</style>
