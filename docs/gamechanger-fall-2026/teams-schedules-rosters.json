@@ -1,0 +1,645 @@
+{
+  "collectedDate": "2026-09-27",
+  "timezone": "America/New_York",
+  "source": "Signed-in GameChanger web UI",
+  "notes": [
+    "Standard batting, pitching, and fielding tables collected for Varsity and JV. Advanced views were not collected.",
+    "CMS detailed statistics require Family Access; placeholder values were excluded.",
+    "GameChanger displayed totals are preserved, including differences between team records and pitching decisions or games with stats.",
+    "Names and numbers are preserved as displayed. G Gardner has separate JV entries #10 and #27.",
+    "Home/away is based on the displayed @ marker; entries without it may include neutral-site games.",
+    "Times are displayed GameChanger times. A time-only past game is not assumed completed."
+  ],
+  "teams": {
+    "varsity": {
+      "name": "Chamblee Varsity Bulldogs",
+      "record": "16-6-1",
+      "source": "https://web.gc.com/teams/jtNguPLd3LXY/2026-fall-chamblee-varsity-bulldogs",
+      "staff": [
+        "Mike Williams",
+        "Matthew Ritchey",
+        "Aubrey Scher"
+      ],
+      "roster": [
+        "Clara Godwin, #16",
+        "Anabelle Ritchey, #7",
+        "Brooke Williams, #13",
+        "Brooke Winokur, #18",
+        "Callie DelFavero, #5",
+        "Ellasyn Bair, #23",
+        "G Gardner, #27",
+        "Hannah Sullivan, #9",
+        "Kayte Henry, #3",
+        "Lilah Scher, #11",
+        "M Bradley, #22",
+        "Madison Jones, #99",
+        "Norah Yarbrough, #75",
+        "Sadie Thomson, #6",
+        "Sarah Lewis"
+      ],
+      "season": "Fall 2026",
+      "games": [
+        {
+          "date": "2026-07-30",
+          "opponent": "Marist Varsity",
+          "homeAway": "home",
+          "display": "12:00 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "12:00 PM"
+        },
+        {
+          "date": "2026-08-03",
+          "opponent": "Woodward",
+          "homeAway": "away",
+          "display": "W 16-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 16,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-08-04",
+          "opponent": "North Springs",
+          "homeAway": "away",
+          "display": "W 10-2",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 10,
+          "opponentScore": 2
+        },
+        {
+          "date": "2026-08-07",
+          "opponent": "Collins Hill",
+          "homeAway": "home",
+          "display": "L 6-8",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 6,
+          "opponentScore": 8
+        },
+        {
+          "date": "2026-08-10",
+          "opponent": "South Gwinnett",
+          "homeAway": "away",
+          "display": "W 19-1",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 19,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-08-12",
+          "opponent": "Riverwood Varsity Raiders",
+          "homeAway": "away",
+          "display": "L 1-3",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 1,
+          "opponentScore": 3
+        },
+        {
+          "date": "2026-08-13",
+          "opponent": "Lakeside Varsity Vikings",
+          "homeAway": "home",
+          "display": "W 8-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 8,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-08-17",
+          "opponent": "Centennial",
+          "homeAway": "home",
+          "display": "W 5-4",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 5,
+          "opponentScore": 4
+        },
+        {
+          "date": "2026-08-18",
+          "opponent": "Shiloh",
+          "homeAway": "away",
+          "display": "W 15-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 15,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-08-20",
+          "opponent": "Midtown",
+          "homeAway": "home",
+          "display": "W 3-2",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 3,
+          "opponentScore": 2
+        },
+        {
+          "date": "2026-08-24",
+          "opponent": "Greater Atlanta Christian",
+          "homeAway": "home",
+          "display": "W 9-1",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 9,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-08-25",
+          "opponent": "Riverwood Varsity Raiders",
+          "homeAway": "home",
+          "display": "T 4-4",
+          "status": "FINAL",
+          "outcome": "T",
+          "chambleeScore": 4,
+          "opponentScore": 4
+        },
+        {
+          "date": "2026-08-26",
+          "opponent": "North Springs",
+          "homeAway": "home",
+          "display": "W 12-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 12,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-08-27",
+          "opponent": "Alcovy",
+          "homeAway": "home",
+          "display": "W 16-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 16,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-08-31",
+          "opponent": "Meadowcreek",
+          "homeAway": "home",
+          "display": "W 7-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 7,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-09-01",
+          "opponent": "Dunwoody",
+          "homeAway": "home",
+          "display": "L 1-10",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 1,
+          "opponentScore": 10
+        },
+        {
+          "date": "2026-09-03",
+          "opponent": "Decatur",
+          "homeAway": "away",
+          "display": "L 11-12",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 11,
+          "opponentScore": 12
+        },
+        {
+          "date": "2026-09-08",
+          "opponent": "Heritage",
+          "homeAway": "away",
+          "display": "W 20-1",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 20,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-09-10",
+          "opponent": "Meadowcreek",
+          "homeAway": "home",
+          "display": "W 7-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 7,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-09-14",
+          "opponent": "Centennial",
+          "homeAway": "away",
+          "display": "L 7-8",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 7,
+          "opponentScore": 8
+        },
+        {
+          "date": "2026-09-15",
+          "opponent": "Lakeside Varsity Vikings",
+          "homeAway": "away",
+          "display": "W 9-0",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 9,
+          "opponentScore": 0
+        },
+        {
+          "date": "2026-09-16",
+          "opponent": "Collins Hill",
+          "homeAway": "away",
+          "display": "L 0-1",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 0,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-09-17",
+          "opponent": "Shiloh",
+          "homeAway": "home",
+          "display": "W 17-1",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 17,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-09-22",
+          "opponent": "Midtown",
+          "homeAway": "away",
+          "display": "W 9-8",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 9,
+          "opponentScore": 8
+        },
+        {
+          "date": "2026-09-28",
+          "opponent": "Woodward",
+          "homeAway": "home",
+          "display": "5:00 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:00 PM"
+        },
+        {
+          "date": "2026-09-29",
+          "opponent": "Alcovy",
+          "homeAway": "away",
+          "display": "5:30 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:30 PM"
+        },
+        {
+          "date": "2026-10-01",
+          "opponent": "Dunwoody",
+          "homeAway": "away",
+          "display": "5:00 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:00 PM"
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Greater Atlanta Christian",
+          "homeAway": "away",
+          "display": "5:30 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:30 PM"
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "Decatur",
+          "homeAway": "home",
+          "display": "5:00 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:00 PM"
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Marist Varsity",
+          "homeAway": "away",
+          "display": "5:30 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:30 PM"
+        },
+        {
+          "date": "2026-10-08",
+          "opponent": "Heritage",
+          "homeAway": "home",
+          "display": "5:00 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:00 PM"
+        }
+      ]
+    },
+    "jv": {
+      "name": "Chamblee Junior Varsity Bulldogs",
+      "record": "8-6",
+      "source": "https://web.gc.com/teams/YO3MiOThBRW1/2026-fall-chamblee-junior-varsity-bulldogs",
+      "staff": [
+        "Mike Williams",
+        "Brandy Carpenter",
+        "Matthew Ritchey",
+        "Doug Holtzman"
+      ],
+      "roster": [
+        "A Grubman, #21",
+        "A Carpenter, #55",
+        "A Allison, #95",
+        "B Williams, #13",
+        "G Gardner, #27",
+        "G Gardner, #10",
+        "K Henry, #3",
+        "L Mueller, #88",
+        "M Bradley, #22",
+        "M Holtzman, #2",
+        "N Yarbrough, #75",
+        "S Lewis, #29",
+        "V Owoade, #4"
+      ],
+      "season": "Fall 2026",
+      "games": [
+        {
+          "date": "2026-08-06",
+          "opponent": "Lakeside Junior Varsity Vikings",
+          "homeAway": "home",
+          "display": "W 9-4",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 9,
+          "opponentScore": 4
+        },
+        {
+          "date": "2026-08-07",
+          "opponent": "Collins Hill JV",
+          "homeAway": "home",
+          "display": "W 8-1",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 8,
+          "opponentScore": 1
+        },
+        {
+          "date": "2026-08-12",
+          "opponent": "Lakeside Junior Varsity Vikings",
+          "homeAway": "away",
+          "display": "W 13-6",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 13,
+          "opponentScore": 6
+        },
+        {
+          "date": "2026-08-13",
+          "opponent": "Riverwood JV",
+          "homeAway": "away",
+          "display": "L 9-10",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 9,
+          "opponentScore": 10
+        },
+        {
+          "date": "2026-08-13",
+          "opponent": "Riverwood JV",
+          "homeAway": "away",
+          "display": "W 11-10",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 11,
+          "opponentScore": 10
+        },
+        {
+          "date": "2026-08-18",
+          "opponent": "Decatur",
+          "homeAway": "home",
+          "display": "W 10-5",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 10,
+          "opponentScore": 5
+        },
+        {
+          "date": "2026-08-20",
+          "opponent": "Marist Junior Varsity War Eagles",
+          "homeAway": "away",
+          "display": "L 4-20",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 4,
+          "opponentScore": 20
+        },
+        {
+          "date": "2026-08-24",
+          "opponent": "Mount Vernon Varsity Mustangs",
+          "homeAway": "away",
+          "display": "L 2-14",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 2,
+          "opponentScore": 14
+        },
+        {
+          "date": "2026-08-26",
+          "opponent": "Lakeside Junior Varsity Vikings",
+          "homeAway": "away",
+          "display": "W 11-6",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 11,
+          "opponentScore": 6
+        },
+        {
+          "date": "2026-08-31",
+          "opponent": "Dunwoody",
+          "homeAway": "home",
+          "display": "W 6-3",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 6,
+          "opponentScore": 3
+        },
+        {
+          "date": "2026-09-01",
+          "opponent": "Dunwoody",
+          "homeAway": "away",
+          "display": "L 1-9",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 1,
+          "opponentScore": 9
+        },
+        {
+          "date": "2026-09-02",
+          "opponent": "Marist Junior Varsity War Eagles",
+          "homeAway": "home",
+          "display": "L 3-16",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 3,
+          "opponentScore": 16
+        },
+        {
+          "date": "2026-09-09",
+          "opponent": "Lakeside Junior Varsity Vikings",
+          "homeAway": "home",
+          "display": "W 9-8",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 9,
+          "opponentScore": 8
+        },
+        {
+          "date": "2026-09-16",
+          "opponent": "Collins Hill JV",
+          "homeAway": "away",
+          "display": "L 0-12",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 0,
+          "opponentScore": 12
+        }
+      ]
+    },
+    "cms": {
+      "name": "CMS Bulldogs 2026",
+      "record": "1-6-2",
+      "source": "https://web.gc.com/teams/zlJwkxwPFSss/2026-fall-cms-bulldogs-2026",
+      "staff": [
+        "Sean DelFavero",
+        "Chris Yarbrough",
+        "Jennifer Edenfield",
+        "Lew Henry"
+      ],
+      "roster": [
+        "Ada K, #4",
+        "Anna H, #10",
+        "Ava L, #00",
+        "Cassidy T, #9",
+        "Charlie O, #99",
+        "Elyse R, #3",
+        "Grace C, #5",
+        "Harper L, #1",
+        "Lilah E, #11",
+        "Maddox H, #6",
+        "Maggie D, #31",
+        "Mary Emerson H, #2",
+        "Presley Y, #7",
+        "Zaara L, #24"
+      ],
+      "statsAccess": "Family Access Only - not collected",
+      "season": "Fall 2026",
+      "games": [
+        {
+          "date": "2026-08-13",
+          "opponent": "Marist War Eagles - MS Team - Fall 26",
+          "homeAway": "away",
+          "display": "L 7-8",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 7,
+          "opponentScore": 8
+        },
+        {
+          "date": "2026-08-17",
+          "opponent": "Woodward",
+          "homeAway": "away",
+          "display": "L 0-7",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 0,
+          "opponentScore": 7
+        },
+        {
+          "date": "2026-08-22",
+          "opponent": "Peachtree Jr Wildcats Gold 26",
+          "homeAway": "home",
+          "display": "T 9-9",
+          "status": "FINAL",
+          "outcome": "T",
+          "chambleeScore": 9,
+          "opponentScore": 9
+        },
+        {
+          "date": "2026-08-29",
+          "opponent": "St. Pius X - Middle School",
+          "homeAway": "away",
+          "display": "L 2-9",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 2,
+          "opponentScore": 9
+        },
+        {
+          "date": "2026-09-03",
+          "opponent": "Woodward",
+          "homeAway": "home",
+          "display": "W 7-2",
+          "status": "FINAL",
+          "outcome": "W",
+          "chambleeScore": 7,
+          "opponentScore": 2
+        },
+        {
+          "date": "2026-09-08",
+          "opponent": "St Francis",
+          "homeAway": "away",
+          "display": "L 3-10",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 3,
+          "opponentScore": 10
+        },
+        {
+          "date": "2026-09-17",
+          "opponent": "Peachtree Jr Wildcats Gold 26",
+          "homeAway": "away",
+          "display": "L 4-5",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 4,
+          "opponentScore": 5
+        },
+        {
+          "date": "2026-09-21",
+          "opponent": "Marist War Eagles - MS Team - Fall 26",
+          "homeAway": "home",
+          "display": "L 1-5",
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 1,
+          "opponentScore": 5
+        },
+        {
+          "date": "2026-09-22",
+          "opponent": "Mt Vernon",
+          "homeAway": "home",
+          "display": "T 4-4",
+          "status": "FINAL",
+          "outcome": "T",
+          "chambleeScore": 4,
+          "opponentScore": 4
+        },
+        {
+          "date": "2026-09-29",
+          "opponent": "St. Pius X - Middle School",
+          "homeAway": "home",
+          "display": "5:30 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:30 PM"
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Galloway",
+          "homeAway": "home",
+          "display": "5:30 PM",
+          "status": "SCHEDULED_TIME_ONLY",
+          "time": "5:30 PM"
+        }
+      ]
+    }
+  }
+}
