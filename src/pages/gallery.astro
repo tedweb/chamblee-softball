@@ -1,5 +1,22 @@
 ---
+import { readdirSync } from "node:fs";
+import { join } from "node:path";
 import Base from "../layouts/Base.astro"; import SiteHeader from "../components/SiteHeader.astro"; import SiteFooter from "../components/SiteFooter.astro";
-const photos=["HPC_IMG_2249.JPG","HPC_IMG_2103.JPG","HPC_IMG_2253.JPG","IMG_2140.JPG","HPC_IMG_2252.JPG","IMG_2200.JPG","HPC_IMG_2256.JPG","IMG_2230.JPG","IMG_6920.jpeg","HPC_IMG_2185.JPG","IMG_6912.jpeg","IMG_6924.jpeg"];
+
+// Build the gallery from every image file directly inside public/images (subfolders are skipped).
+// Site assets such as favicons and the logo are excluded because they are not photos.
+const imageExtension = /\.(jpe?g|png|webp|avif|gif)$/i;
+const siteAssets = /^(favicon|android-chrome|apple-touch-icon|chamblee-bulldog-logo)/i;
+const photos = readdirSync(join(process.cwd(), "public/images"), { withFileTypes: true })
+  .filter(entry => entry.isFile() && imageExtension.test(entry.name) && !siteAssets.test(entry.name))
+  .map(entry => entry.name)
+  .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }));
+
+// Every 12 photos, three span two columns to break up the grid.
+const isWide = (index: number) => [2, 6, 10].includes(index % 12);
 ---
-<Base title="Photo Gallery — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main><section class="gallery-head"><p>2026 PHOTO GALLERY</p><h1>Blue, gold,<br/><em>and all grit.</em></h1><span>Moments from the circle, the plate, and the teammates who make every inning count.</span></section><section class="photo-grid">{photos.map((photo,i)=><figure class:list={{wide:[2,6,10].includes(i)}}><img src={`/images/${photo}`} alt={`Chamblee Softball game photo ${i+1}`} loading="lazy"/></figure>)}</section></main><SiteFooter /></Base>
+<Base title="Photo Gallery — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main><section class="gallery-head"><p>2026 PHOTO GALLERY</p><h1>Blue, gold,<br/><em>and all grit.</em></h1><span>Moments from the circle, the plate, and the teammates who make every inning count.</span></section><section class="photo-grid">{photos.map((photo, i) => <figure class:list={{ wide: isWide(i) }}><img src={`/images/${encodeURIComponent(photo)}`} alt={`Chamblee Softball photo ${i + 1}`} loading={i < 3 ? "eager" : "lazy"} decoding="async" /></figure>)}</section></main><SiteFooter /></Base>
+
+<style>
+  .photo-grid { grid-auto-flow: dense; }
+</style>
