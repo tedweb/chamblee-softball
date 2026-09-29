@@ -697,7 +697,8 @@
     {
       "name": "PayPal Donation",
       "url": "https://www.paypal.com/donate/?hosted_button_id=8JYBVCXGB4H8L",
-      "description": "Donate with PayPal, debit, or credit card"
+      "description": "Donate with PayPal, debit, or credit card",
+      "qr_code": "chamblee-softball/public/images/donation_qr_codes/qrcode.png"
     }
   ]
 }
