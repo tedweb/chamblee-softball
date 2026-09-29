@@ -282,8 +282,10 @@
           "opponent": "Woodward",
           "homeAway": "home",
           "display": "5:00 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:00 PM"
+          "status": "FINAL",
+          "time": "5:00 PM",
+          "chambleeScore": 12,
+          "opponentScore": 0
         },
         {
           "date": "2026-09-29",
