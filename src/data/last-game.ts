@@ -1,6 +1,6 @@
 // Homepage "Last game" and "Next on the calendar" data, derived from the GameChanger export.
-// Update docs/gamechanger-fall-2026/teams-schedules-rosters.json and rebuild to refresh.
-import data from "../../docs/gamechanger-fall-2026/teams-schedules-rosters.json";
+// Update docs/data.json and rebuild to refresh.
+import data from "../../docs/data.json";
 
 interface Game {
   date: string;              // YYYY-MM-DD, in data.timezone
@@ -20,7 +20,7 @@ export interface UpcomingGame {
 }
 
 const timeZone = data.timezone || "America/New_York";
-const teamLabels: Record<string, string> = { varsity: "Varsity", jv: "Junior Varsity", cms: "Middle School" };
+const teamLabels: Record<string, string> = { varsity: "Varsity", jv: "Junior Varsity", ms: "Middle School", cms: "Middle School" };
 const teamOrder = Object.keys(teamLabels);
 
 // Convert a wall-clock date/time in `timeZone` to a real Date (handles EDT/EST automatically).

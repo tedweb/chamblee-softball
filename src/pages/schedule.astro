@@ -4,6 +4,13 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 
 import schedule from '../data/schedule.json';
+import { seasonRecords } from '../data/season';
+import siteData from '../../docs/data.json';
+
+// Subscribe links come from docs/data.json (teams.<key>.calendar_link); the bundled .ics file is the fallback.
+const dataKeys: Record<string, string> = { varsity: 'varsity', 'junior-varsity': 'jv', 'middle-school': 'ms' };
+const dataTeams = siteData.teams as Record<string, { calendar_link?: string }>;
+const calendarLink = (team: string) => dataTeams[dataKeys[team]]?.calendar_link;
 const date = (value: string) => new Date(value).toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric' });
 const time = (value: string) => new Date(value).toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
 const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school', 'Middle School']];
@@ -11,9 +18,15 @@ const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school
 <Base title="Schedule — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main>
   <section class="schedule-heading"><p>2026 SEASON</p><h1>Schedule</h1></section>
   <section class="schedule-section section-wrap">
-    <div class="calendar-downloads">{schedule.calendars.map(calendar => <a href={`/calendars/${calendar.team}.ics`} data-calendar-team={calendar.team} hidden={calendar.team !== 'varsity'} download>Download {calendar.name} calendar</a>)}</div>
-    <p class="data-note">GameChanger schedule snapshot · Updated {date(schedule.updated)}. Times are Eastern. Downloaded calendars do not update automatically.</p>
+    <div class="calendar-downloads">{schedule.calendars.map(calendar => { const link = calendarLink(calendar.team); return link
+      ? <a href={link} data-calendar-team={calendar.team} hidden={calendar.team !== 'varsity'}>Subscribe to {calendar.name} calendar</a>
+      : <a href={`/calendars/${calendar.team}.ics`} data-calendar-team={calendar.team} hidden={calendar.team !== 'varsity'} download>Download {calendar.name} calendar</a>; })}</div>
+    <p class="data-note">GameChanger schedule snapshot · Updated {date(schedule.updated)}. Times are Eastern. Subscribed calendars update automatically from GameChanger.</p>
     <div class="schedule-tools"><div role="group" aria-label="Filter schedule by team">{teams.map(([value, label]) => <button type="button" data-team-filter={value} class:list={{active: value === 'varsity'}} aria-pressed={value === 'varsity'}>{label}</button>)}</div><span id="schedule-count" aria-live="polite">{schedule.games.filter(game => game.team === 'varsity').length} scheduled games</span></div>
+    {teams.map(([value]) => { const record = seasonRecords[value as keyof typeof seasonRecords]; return <section class="team-summary" data-record-team={value} hidden={value !== 'varsity'} aria-label={`${record.name} record`}>
+      <div><p>OVERALL RECORD</p><strong>{record.overall}</strong></div>
+      {record.region && <div><p>REGION RECORD</p><strong>{record.region}</strong></div>}
+    </section>; })}
     <div class="schedule-list">{schedule.games.map(game => <article class="calendar-game" data-team={game.team} hidden={game.team !== 'varsity'}>
       <time datetime={game.start}>{date(game.start)}</time>
       <div><h2>{game.title}</h2>{game.location && <p class="game-location">{game.location}</p>}</div>
@@ -28,6 +41,7 @@ const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school
   function selectTeam(team: string) {
     if (!Array.from(buttons).some(button => button.dataset.teamFilter === team)) team = 'varsity';
     buttons.forEach(button => { const selected = button.dataset.teamFilter === team; button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected)); });
+    document.querySelectorAll<HTMLElement>('[data-record-team]').forEach(record => { record.hidden = record.dataset.recordTeam !== team; });
     document.querySelectorAll<HTMLElement>('[data-calendar-team]').forEach(link => { link.hidden = link.dataset.calendarTeam !== team; });
     let count = 0;
     games.forEach(game => { game.hidden = game.dataset.team !== team; if (!game.hidden) count++; });
@@ -41,6 +55,6 @@ const teams = [['varsity', 'Varsity'], ['junior-varsity', 'JV'], ['middle-school
   selectTeam(new URLSearchParams(window.location.search).get('team') ?? 'varsity');
 </script>
 
-<style>.schedule-heading{padding:50px max(24px,calc((100% - 1132px)/2));background:var(--navy);color:#fff}.schedule-heading p{font-size:.875rem;letter-spacing:.15em}.schedule-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}.calendar-downloads a[hidden]{display:none}.schedule-list .calendar-game{grid-template-columns:110px minmax(0,1fr) 100px}@media(max-width:640px){.schedule-list .calendar-game{grid-template-columns:1fr auto}}</style>
+<style>.schedule-heading{padding:50px max(24px,calc((100% - 1132px)/2));background:var(--navy);color:#fff}.schedule-heading p{font-size:.875rem;letter-spacing:.15em}.schedule-heading h1{margin:12px 0 0;font:400 clamp(3rem,7vw,6rem)/1 "Archivo Black",Impact,sans-serif;text-transform:uppercase}.calendar-downloads a[hidden]{display:none}.schedule-section .team-summary{display:flex;padding:0 0 24px}.schedule-section .team-summary[hidden]{display:none}.schedule-section .team-summary>div{flex:0 1 240px;min-width:0;padding:12px 20px;border:0;border-right:1px solid #bfc8d5}.schedule-section .team-summary>div:first-child{padding-left:0}.schedule-section .team-summary>div:last-child{border-right:0}.schedule-section .team-summary strong{font-size:clamp(1.65rem,6vw,2.4rem)}.schedule-list .calendar-game{grid-template-columns:110px minmax(0,1fr) 100px}@media(max-width:640px){.schedule-list .calendar-game{grid-template-columns:1fr auto}}</style>
 
 

@@ -13,13 +13,17 @@
   "teams": {
     "varsity": {
       "name": "Chamblee Varsity Bulldogs",
-      "record": "16-6-1",
-      "source": "https://web.gc.com/teams/jtNguPLd3LXY/2026-fall-chamblee-varsity-bulldogs",
+      "season": "Fall 2026",
+      "calendar_link": "webcal://api.team-manager.gc.com/ics-calendar-documents/user/6dfbdcb2-b117-490a-8679-b890d3335561.ics?teamId=c1785b6b-d62c-483b-9b49-a4e34850e4b0&token=146e9aba7860ce0b121077595b8e5460c9e9799b1104d9249ab297c3a1764606",
       "staff": [
         "Mike Williams",
         "Matthew Ritchey",
         "Aubrey Scher"
       ],
+      "coaches": {
+        "Head Coach": "Nathaniel Berryman",
+        "Assistant Coach": "John Phelps"
+      },
       "roster": [
         "Anabelle Ritchey, #7",
         "Brooke Williams, #13",
@@ -37,11 +41,11 @@
         "Sadie Thomson, #6",
         "Sarah Lewis, #29"
       ],
-      "season": "Fall 2026",
       "games": [
         {
           "date": "2026-07-30",
           "opponent": "Marist Varsity",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "12:00 PM",
           "status": "FINAL",
@@ -50,6 +54,7 @@
         {
           "date": "2026-08-03",
           "opponent": "Woodward",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "W 16-0",
           "status": "FINAL",
@@ -60,6 +65,7 @@
         {
           "date": "2026-08-04",
           "opponent": "North Springs",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "W 10-2",
           "status": "FINAL",
@@ -70,6 +76,7 @@
         {
           "date": "2026-08-07",
           "opponent": "Collins Hill",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "L 6-8",
           "status": "FINAL",
@@ -80,6 +87,7 @@
         {
           "date": "2026-08-10",
           "opponent": "South Gwinnett",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "W 19-1",
           "status": "FINAL",
@@ -90,6 +98,7 @@
         {
           "date": "2026-08-12",
           "opponent": "Riverwood Varsity Raiders",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "L 1-3",
           "status": "FINAL",
@@ -100,6 +109,7 @@
         {
           "date": "2026-08-13",
           "opponent": "Lakeside Varsity Vikings",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 8-0",
           "status": "FINAL",
@@ -110,6 +120,7 @@
         {
           "date": "2026-08-17",
           "opponent": "Centennial",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "W 5-4",
           "status": "FINAL",
@@ -120,6 +131,7 @@
         {
           "date": "2026-08-18",
           "opponent": "Shiloh",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "W 15-0",
           "status": "FINAL",
@@ -130,6 +142,7 @@
         {
           "date": "2026-08-20",
           "opponent": "Midtown",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 3-2",
           "status": "FINAL",
@@ -140,6 +153,7 @@
         {
           "date": "2026-08-24",
           "opponent": "Greater Atlanta Christian",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "W 9-1",
           "status": "FINAL",
@@ -150,6 +164,7 @@
         {
           "date": "2026-08-25",
           "opponent": "Riverwood Varsity Raiders",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "T 4-4",
           "status": "FINAL",
@@ -160,6 +175,7 @@
         {
           "date": "2026-08-26",
           "opponent": "North Springs",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "W 12-0",
           "status": "FINAL",
@@ -170,6 +186,7 @@
         {
           "date": "2026-08-27",
           "opponent": "Alcovy",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 16-0",
           "status": "FINAL",
@@ -180,6 +197,7 @@
         {
           "date": "2026-08-31",
           "opponent": "Meadowcreek",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 7-0",
           "status": "FINAL",
@@ -190,6 +208,7 @@
         {
           "date": "2026-09-01",
           "opponent": "Dunwoody",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "L 1-10",
           "status": "FINAL",
@@ -200,6 +219,7 @@
         {
           "date": "2026-09-03",
           "opponent": "Decatur",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "L 11-12",
           "status": "FINAL",
@@ -210,6 +230,7 @@
         {
           "date": "2026-09-08",
           "opponent": "Heritage",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "W 20-1",
           "status": "FINAL",
@@ -220,6 +241,7 @@
         {
           "date": "2026-09-10",
           "opponent": "Meadowcreek",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 7-0",
           "status": "FINAL",
@@ -230,6 +252,7 @@
         {
           "date": "2026-09-14",
           "opponent": "Centennial",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "L 7-8",
           "status": "FINAL",
@@ -240,6 +263,7 @@
         {
           "date": "2026-09-15",
           "opponent": "Lakeside Varsity Vikings",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "W 9-0",
           "status": "FINAL",
@@ -250,6 +274,7 @@
         {
           "date": "2026-09-16",
           "opponent": "Collins Hill",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "L 0-1",
           "status": "FINAL",
@@ -260,6 +285,7 @@
         {
           "date": "2026-09-17",
           "opponent": "Shiloh",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "W 17-1",
           "status": "FINAL",
@@ -270,6 +296,7 @@
         {
           "date": "2026-09-22",
           "opponent": "Midtown",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "W 9-8",
           "status": "FINAL",
@@ -280,6 +307,7 @@
         {
           "date": "2026-09-28",
           "opponent": "Woodward",
+          "regionalGame": "false",
           "homeAway": "home",
           "display": "5:00 PM",
           "status": "FINAL",
@@ -290,6 +318,7 @@
         {
           "date": "2026-09-29",
           "opponent": "Alcovy",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "5:30 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -298,6 +327,7 @@
         {
           "date": "2026-10-01",
           "opponent": "Dunwoody",
+          "regionalGame": "true",
           "homeAway": "away",
           "display": "5:00 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -306,6 +336,7 @@
         {
           "date": "2026-10-05",
           "opponent": "Greater Atlanta Christian",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "5:30 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -314,6 +345,7 @@
         {
           "date": "2026-10-06",
           "opponent": "Decatur",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "5:00 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -322,6 +354,7 @@
         {
           "date": "2026-10-07",
           "opponent": "Marist Varsity",
+          "regionalGame": "false",
           "homeAway": "away",
           "display": "5:30 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -330,6 +363,7 @@
         {
           "date": "2026-10-08",
           "opponent": "Heritage",
+          "regionalGame": "true",
           "homeAway": "home",
           "display": "5:00 PM",
           "status": "SCHEDULED_TIME_ONLY",
@@ -339,14 +373,18 @@
     },
     "jv": {
       "name": "Chamblee Junior Varsity Bulldogs",
-      "record": "8-6",
-      "source": "https://web.gc.com/teams/YO3MiOThBRW1/2026-fall-chamblee-junior-varsity-bulldogs",
+      "season": "Fall 2026",
+      "calendar_link": "webcal://api.team-manager.gc.com/ics-calendar-documents/user/6dfbdcb2-b117-490a-8679-b890d3335561.ics?teamId=5a7780ea-78e0-468a-94ea-1386e74ff80b&token=54cb9ea8dea3634b6eb1623078feadca0b28d648d92e95e7761c79ee994968af",
       "staff": [
         "Mike Williams",
         "Brandy Carpenter",
         "Matthew Ritchey",
         "Doug Holtzman"
       ],
+      "coaches": {
+        "Head Coach": "Doug Holtzman",
+        "Assistant Coach": "Alan Loper"
+      },
       "roster": [
         "A Grubman, #21",
         "A Carpenter, #55",
@@ -362,7 +400,6 @@
         "S Lewis, #29",
         "V Owoade, #4"
       ],
-      "season": "Fall 2026",
       "games": [
         {
           "date": "2026-08-06",
@@ -497,7 +534,7 @@
         {
           "date": "2026-09-16",
           "opponent": "Collins Hill JV",
-          "homeAway": "away",
+          "homeAway": "away", 
           "display": "L 0-12",
           "status": "FINAL",
           "outcome": "L",
@@ -506,16 +543,20 @@
         }
       ]
     },
-    "cms": {
+    "ms": {
       "name": "CMS Bulldogs 2026",
-      "record": "1-6-2",
-      "source": "https://web.gc.com/teams/zlJwkxwPFSss/2026-fall-cms-bulldogs-2026",
+      "season": "Fall 2026",
+      "calendar_link": "webcal://api.team-manager.gc.com/ics-calendar-documents/user/6dfbdcb2-b117-490a-8679-b890d3335561.ics?teamId=5a7780ea-78e0-468a-94ea-1386e74ff80b&token=54cb9ea8dea3634b6eb1623078feadca0b28d648d92e95e7761c79ee994968af",
       "staff": [
         "Sean DelFavero",
         "Chris Yarbrough",
         "Jennifer Edenfield",
         "Lew Henry"
       ],
+      "coaches": {
+        "Head Coach": "Chris Yarbrough",
+        "Assistant Coach": "Lew Henry"
+      },
       "roster": [
         "Ada K, #4",
         "Anna H, #10",
@@ -532,8 +573,6 @@
         "Presley Y, #7",
         "Zaara L, #24"
       ],
-      "statsAccess": "Family Access Only - not collected",
-      "season": "Fall 2026",
       "games": [
         {
           "date": "2026-08-13",
@@ -588,7 +627,7 @@
         {
           "date": "2026-09-08",
           "opponent": "St Francis",
-          "homeAway": "away",
+          "homeAway":"away", 
           "display": "L 3-10",
           "status": "FINAL",
           "outcome": "L",
@@ -598,7 +637,7 @@
         {
           "date": "2026-09-17",
           "opponent": "Peachtree Jr Wildcats Gold 26",
-          "homeAway": "away",
+          "homeAway":"away", 
           "display": "L 4-5",
           "status": "FINAL",
           "outcome": "L",
@@ -617,7 +656,7 @@
         },
         {
           "date": "2026-09-22",
-          "opponent": "Mt Vernon",
+          "opponent": "Mt. Vernon",
           "homeAway": "home",
           "display": "T 4-4",
           "status": "FINAL",
@@ -643,5 +682,22 @@
         }
       ]
     }
-  }
+  },
+  "sponsors": [
+      {
+          "name": "Brookhaven Family Dentistry",
+          "url": "https://brookhavenfamilydentistry.com/",
+          "image": "/images/sponsors/bfd.jpg",
+          "tagline": "Proudly helping Chamblee athletes smile brighter.",
+          "status": "active",
+          "level": "featured"
+      }
+  ],
+  "donation_links": [
+    {
+      "name": "PayPal Donation",
+      "url": "https://www.paypal.com/donate/?hosted_button_id=8JYBVCXGB4H8L",
+      "description": "Donate with PayPal, debit, or credit card"
+    }
+  ]
 }

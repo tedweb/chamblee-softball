@@ -1,8 +1,5 @@
 ---
-import data from "../../docs/sponsors.json";
-
-interface Sponsor { name: string; url: string; image: string; tagline: string; status: string; level: string; }
-const sponsors = (data.sponsors as Sponsor[]).filter(sponsor => sponsor.status === "active");
+import { activeSponsors as sponsors } from "../data/sponsors";
 ---
 {sponsors.length > 0 && <article class="sponsor-card" aria-labelledby="sponsor-card-heading" aria-roledescription="carousel">
   <div class="sponsor-card-head">

@@ -4,16 +4,21 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 
 import { seasonRecords } from '../../data/season';
-import data from '../../data/teams.json';
+import gamechanger from '../../../docs/data.json';
+
+interface GameChangerTeam { name: string; roster?: string[]; coaches?: Record<string, string>; }
 export function getStaticPaths() {
+  // getStaticPaths runs in its own scope and can only use imports, so the lookup lives here.
+  const gcTeams = gamechanger.teams as Record<string, GameChangerTeam>;
   return [
     { slug: 'varsity', key: 'varsity', image: 'HPC_IMG_2256.JPG', blurb: 'Experienced. Composed. Ready for every inning.' },
     { slug: 'junior-varsity', key: 'jv', image: 'HPC_IMG_2253.JPG', blurb: 'Building confidence, fundamentals, and the next generation of Bulldogs.' },
-    { slug: 'middle-school', key: 'middle', image: 'HPC_IMG_2252.JPG', blurb: 'Learning the game, competing together, and growing the Bulldog tradition.' },
+    { slug: 'middle-school', key: 'ms', image: 'HPC_IMG_2252.JPG', blurb: 'Learning the game, competing together, and growing the Bulldog tradition.' },
   ].map(team => ({ params: { team: team.slug }, props: {
     ...team, ...seasonRecords[team.slug as keyof typeof seasonRecords],
-    players: data.players[team.key as keyof typeof data.players],
-    coaches: data.coaches[team.key as keyof typeof data.coaches],
+    // Roster and coaches come from the GameChanger export (docs/data.json).
+    players: gcTeams[team.key]?.roster ?? [],
+    coaches: Object.entries(gcTeams[team.key]?.coaches ?? {}).map(([role, name]) => ({ role, name })),
   }}));
 }
 const team = Astro.props;
@@ -23,11 +28,6 @@ const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-sc
   <SiteHeader /><main>
     <section class="teams-heading"><p>2026 SEASON</p><h1>Meet the Bulldogs</h1></section>
     <nav class="team-toggle section-wrap" aria-label="Select a team">{teamLinks.map(([slug, label]) => <a href={`/teams/${slug}`} class:list={{active: team.slug === slug}} aria-current={team.slug === slug ? "page" : undefined}>{label}</a>)}</nav>
-    <section class="team-summary section-wrap">
-      <div><p>OVERALL RECORD</p><strong>{team.overall}</strong><small>{team.key === 'jv' ? 'Wins–losses' : 'Wins–losses–ties'}</small></div>
-      {team.region && <div><p>REGION RECORD</p><strong>{team.region}</strong></div>}
-
-    </section>
     <section class="roster-section section-wrap" id="roster">
       <div class="section-heading"><p>{team.name.toUpperCase()} · {team.players.length} PLAYERS</p></div>
       <div class="roster-grid">{team.players.map(player => {
@@ -35,10 +35,7 @@ const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-sc
         return <article><b aria-label={number ? `Jersey number ${number}` : 'Jersey number not listed'}>{number ? `#${number}` : '—'}</b><span>{name}</span></article>;
       })}</div>
     </section>
-    <section class="coach-section" id="coaches"><div><p>COACHING STAFF</p><h2>Leading the {team.name} Bulldogs</h2><ul class="coach-list">{team.coaches.map(coach => {
-      const [name, role] = coach.split(', ');
-      return <li><strong>{name}</strong><span>{role === 'HC' ? 'Head Coach' : 'Assistant Coach'}</span></li>;
-    })}</ul><a href="/program">About the program →</a></div></section>
+    <section class="coach-section" id="coaches"><div><p>COACHING STAFF</p><h2>Leading the {team.name} Bulldogs</h2><ul class="coach-list">{team.coaches.map(coach => <li><strong>{coach.name}</strong><span>{coach.role}</span></li>)}</ul><a href="/program">About the program →</a></div></section>
   </main><SiteFooter />
 </Base>
 
@@ -50,11 +47,6 @@ const teamLinks = [["varsity", "Varsity"], ["junior-varsity", "JV"], ["middle-sc
 .team-toggle a{padding:10px 14px;border:1px solid var(--navy);background:transparent;color:var(--navy);font-family:Oswald,Arial,sans-serif;font-size:1rem;font-weight:600;text-decoration:none}
 .team-toggle a.active{background:var(--navy);color:#fff}
 .team-toggle a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-.team-summary{display:flex;gap:0;padding-top:16px;padding-bottom:24px}
-.team-summary>div{flex:0 1 240px;min-width:0;padding:12px 20px;border:0;border-right:1px solid #bfc8d5}
-.team-summary>div:first-child{padding-left:0}
-.team-summary>div:last-child{border-right:0}
-.team-summary strong{font-size:clamp(1.65rem,6vw,2.4rem)}
 .roster-section{padding-top:24px}
 .roster-grid{margin-top:20px}
 .coach-section{display:block}
