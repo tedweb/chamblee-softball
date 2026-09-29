@@ -60,7 +60,7 @@ Staff: Mike Williams, Matthew Ritchey, Aubrey Scher
 | 2026-09-16 | Collins Hill | away | L 0-1 |
 | 2026-09-17 | Shiloh | home | W 17-1 |
 | 2026-09-22 | Midtown | away | W 9-8 |
-| 2026-09-28 | Woodward | home | 5:00 PM |
+| 2026-09-28 | Woodward | home | 5:00 PM | W 12-0 |
 | 2026-09-29 | Alcovy | away | 5:30 PM |
 | 2026-10-01 | Dunwoody | away | 5:00 PM |
 | 2026-10-05 | Greater Atlanta Christian | away | 5:30 PM |
