@@ -20,9 +20,22 @@ const donationLinks = ((siteData as { donation_links?: DonationLink[] }).donatio
       {sponsor.image && <img src={sponsor.image} alt={`${sponsor.name} logo`} loading="lazy" />}
       <h3>{sponsor.url ? <a href={sponsor.url} target="_blank" rel="noopener">{sponsor.name}</a> : sponsor.name}</h3>
       {sponsor.tagline && <span>{sponsor.tagline}</span>}
-    </div>)}</aside>}</section><section class="gear-section section-wrap" id="gear"><div><p>FAN GEAR</p><h2>Wear the blue and gold.</h2><span>The official team store is being prepared. Shirts, hats, and spirit wear will be available here.</span></div><img src="/images/IMG_2140.JPG" alt="Chamblee player in blue and gold uniform"/></section></main><SiteFooter /></Base>
+    </div>)}</aside>}</section><section class="gear-section section-wrap" id="gear"><div><p>FAN GEAR</p><h2>Wear the blue and gold.</h2><span>The official team store is being prepared. Shirts, hats, and spirit wear will be available here.</span></div><img class="gear-image" src="/images/store/gear.png" alt="Chamblee Softball fan gear" width="416" height="529" loading="lazy" /></section></main><SiteFooter /></Base>
 
 <style>
+  /* Stack the donation options under the "Make a gift" text on every screen size. */
+  .give-section { grid-template-columns: 1fr; gap: 32px; }
+  .give-section .give-options { max-width: 640px; }
+  /* Same for the sponsorship section: sponsor list goes under the "Sponsorship opportunities" text. */
+  .sponsor-section { grid-template-columns: 1fr; gap: 32px; }
+  .sponsor-section aside { align-self: start; width: 100%; max-width: 640px; }
+  /* Line every section's content up with the 1180px .section-wrap column used by the gift and gear sections.
+     Full-width backgrounds (hero, sponsorship) stay edge to edge; only their content is inset. */
+  .sponsor-section { padding: 90px max(24px, calc((100% - 1132px) / 2)); }
+  :global(.page-hero.no-image) > :global(div) { padding-inline: max(24px, calc((100% - 1132px) / 2)); }
+  @media (max-width: 640px) { .sponsor-section { padding-block: 65px; } }
+  /* Fan gear product image: show the whole image at its natural shape instead of cropping it like a photo. */
+  .gear-section .gear-image { width: auto; max-width: 100%; height: auto; max-height: 529px; object-fit: contain; justify-self: center; }
   .give-options .donation-text { display: grid; gap: 4px; }
   .give-options a.has-qr { grid-template-columns: auto minmax(0, 1fr); align-items: center; justify-content: start; gap: 12px; }
   .donation-qr { width: 140px; height: 140px; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; }
