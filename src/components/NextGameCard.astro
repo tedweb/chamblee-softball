@@ -1,0 +1,26 @@
+---
+import { upcomingGames } from "../data/last-game";
+
+// Pick the next game at build time; the script below re-checks in the browser so the card
+// moves on after a game starts, even if the site hasn't been rebuilt yet.
+const next = upcomingGames.find(game => new Date(game.start) >= new Date());
+---
+<article class="next-card" data-next-game>
+  <p>NEXT ON THE CALENDAR</p>
+  <h2 data-title>{next?.title ?? "Follow the Bulldogs"}</h2>
+  <span data-when>{next?.label ?? "Visit the schedule for the season calendar."}</span>
+  <a href="/schedule">Full schedule →</a>
+  <script type="application/json" data-games set:html={JSON.stringify(upcomingGames)} />
+</article>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-next-game]").forEach(card => {
+    const games: { title: string; start: string; label: string }[] = JSON.parse(card.querySelector("[data-games]")?.textContent || "[]");
+    const next = games.find(game => new Date(game.start).getTime() >= Date.now());
+    const title = card.querySelector("[data-title]");
+    const when = card.querySelector("[data-when]");
+    if (!title || !when) return;
+    title.textContent = next?.title ?? "Follow the Bulldogs";
+    when.textContent = next?.label ?? "Visit the schedule for the season calendar.";
+  });
+</script>
