@@ -332,8 +332,10 @@
           "regionalGame": "true",
           "homeAway": "away",
           "display": "5:00 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:00 PM"
+          "status": "FINAL",
+          "time": "5:00 PM",
+          "chambleeScore": 4,
+          "opponentScore": 1
         },
         {
           "date": "2026-10-05",
