@@ -2,13 +2,14 @@
 import Base from "../../layouts/Base.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import { seniorNight } from "../../data/articles";
+import { pinkOut, seniorNight } from "../../data/articles";
 ---
 <Base title="Articles — Chamblee Softball" description="Stories and news from the Chamblee softball community." bodyClass="production-site">
   <SiteHeader />
   <main>
     <header class="articles-heading"><div class="section-wrap"><p>FROM THE FIELD</p><h1>Articles</h1><span>Stories from our Bulldog family.</span></div></header>
     <section class="article-list section-wrap" aria-label="Latest articles">
+      <article class="pink-preview"><p class="article-label">PINK OUT · OCTOBER 6, 2026</p><h2><a href={pinkOut.href}>{pinkOut.title}</a></h2><p>{pinkOut.excerpt}</p><a class="article-read" href={pinkOut.href}>Get the Pink Out details →</a></article>
       <article><p class="article-label">SENIOR NIGHT · SEPTEMBER 28, 2026</p><h2><a href={seniorNight.href}>{seniorNight.title}</a></h2><p>{seniorNight.excerpt}</p><a class="article-read" href={seniorNight.href}>Read the article →</a></article>
     </section>
   </main>

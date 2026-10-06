@@ -1,5 +1,5 @@
 ---
-import { seniorNight } from "../data/articles";
+import { pinkOut } from "../data/articles";
 import LastGameCard from "../components/LastGameCard.astro";
 import HomeCarousel from "../components/HomeCarousel.astro";
 import SponsorCarousel from "../components/SponsorCarousel.astro";
@@ -9,7 +9,7 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 ---
 <Base title="Chamblee Bulldogs Softball" description="Schedules, teams, news and support for Chamblee High School Softball." bodyClass="production-site"><SiteHeader /><main>
   <section class="home-dugout"><div><p>WELCOME TO THE BLUE AND GOLD</p><h1>Poise in the circle.<br/><em>Power at the plate.</em></h1><span>The official home of Chamblee High School Softball—Varsity, Junior Varsity, Middle School, and the families who back every inning.</span></div><HomeCarousel /></section>
-  <section class="primary-home-article notice-card" aria-label="Latest article"><p class="article-label">SENIOR NIGHT · SEPTEMBER 28</p><h2><a href={seniorNight.href}>{seniorNight.title}</a></h2><p>{seniorNight.excerpt}</p><a class="article-read" href={seniorNight.href}>Read the article →</a></section>
+  <section class="primary-home-article notice-card pink-preview" aria-label="Latest article"><p class="article-label">PINK OUT · TUESDAY, OCTOBER 6, 2026 · 5:00 P.M.</p><h2><a href={pinkOut.href}>{pinkOut.title}</a></h2><p>{pinkOut.excerpt}</p><a class="article-read" href={pinkOut.href}>Get the Pink Out details & donation QR code →</a></section>
   <section class="home-dashboard section-wrap">
     <SponsorCarousel />
     {lastGame && <LastGameCard {...lastGame} />}

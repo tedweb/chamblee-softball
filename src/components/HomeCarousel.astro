@@ -12,7 +12,7 @@ const photos = readdirSync(join(process.cwd(), "public/images"))
     <button type="button" data-previous aria-label="Previous photo">←</button>
     <span data-counter aria-live="off">1 / {photos.length}</span>
     <button type="button" data-next aria-label="Next photo">→</button>
-    <button type="button" data-toggle>Pause slideshow</button>
+    <button type="button" data-toggle aria-label="Pause slideshow" title="Pause slideshow"><svg data-toggle-icon viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M6 4h4v16H6zM14 4h4v16h-4z" /></svg></button>
   </div>}
 </section>}
 <style>
@@ -20,12 +20,13 @@ const photos = readdirSync(join(process.cwd(), "public/images"))
   .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 600ms ease; }
   .slide.active { opacity: 1; }
   .slide img { width: 100%; height: 100%; object-fit: cover; }
-  .controls { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 30px; background: #102f65ed; color: #fff; white-space: nowrap; }
+  .controls { position: absolute; top: 16px; right: 16px; display: flex; align-items: center; gap: 0; padding: 2px; border-radius: 24px; background: #102f65d9; color: #fff; white-space: nowrap; }
   .controls[hidden] { display: none; }
-  .controls button { min-width: 44px; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 24px; background: transparent; color: inherit; font: 600 14px/1.2 Arial, sans-serif; cursor: pointer; }
+  .controls button { width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: inherit; font: 600 18px/1 Arial, sans-serif; cursor: pointer; }
   .controls button:hover { background: #ffffff26; }
+  .controls [data-toggle-icon] { display: block; margin: auto; }
   .controls button:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; }
-  .controls span { font: 400 14px Arial, sans-serif; }
+  .controls [data-counter] { min-width: 38px; text-align: center; font: 400 12px Arial, sans-serif; font-variant-numeric: tabular-nums; }
   @media (max-width: 980px) { .home-carousel { min-height: 600px; } }
   @media (max-width: 640px) { .home-carousel { min-height: 470px; } }
   @media (prefers-reduced-motion: reduce) { .slide { transition: none; } }
@@ -35,8 +36,9 @@ const photos = readdirSync(join(process.cwd(), "public/images"))
     const slides = Array.from(carousel.querySelectorAll<HTMLElement>(".slide"));
     const controls = carousel.querySelector<HTMLElement>(".controls");
     const toggle = carousel.querySelector<HTMLButtonElement>("[data-toggle]");
+    const toggleIcon = carousel.querySelector<SVGPathElement>("[data-toggle-icon] path");
     const counter = carousel.querySelector<HTMLElement>("[data-counter]");
-    if (slides.length < 2 || !controls || !toggle || !counter) return;
+    if (slides.length < 2 || !controls || !toggle || !toggleIcon || !counter) return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let paused = reducedMotion.matches;
     let hovered = false;
@@ -52,7 +54,10 @@ const photos = readdirSync(join(process.cwd(), "public/images"))
     }
     function sync() {
       clearInterval(timer);
-      toggle!.textContent = paused ? "Play slideshow" : "Pause slideshow";
+      const toggleLabel = paused ? "Play slideshow" : "Pause slideshow";
+      toggle!.setAttribute("aria-label", toggleLabel);
+      toggle!.title = toggleLabel;
+      toggleIcon!.setAttribute("d", paused ? "M7 4l14 8-14 8z" : "M6 4h4v16H6zM14 4h4v16h-4z");
       if (!paused && !hovered && !document.hidden) timer = setInterval(() => show(current + 1), 5000);
     }
     controls.hidden = false;

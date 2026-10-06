@@ -1,0 +1,109 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { pinkOut } from "../../data/articles";
+const cancerSource = { name: "NCI", href: "https://www.cancer.gov/about-cancer/understanding/what-is-cancer" };
+const breastSource = { name: "WHO", href: "https://www.who.int/news-room/fact-sheets/detail/breast-cancer" };
+const awarenessFacts = [
+  { text: "Cancer includes more than 100 different types of disease.", source: cancerSource },
+  { text: "Cancer develops when cells multiply without the normal controls on growth.", source: cancerSource },
+  { text: "Cancer can begin in almost any part of the body.", source: cancerSource },
+  { text: "Not every tumor is cancerous; noncancerous tumors are called benign.", source: cancerSource },
+  { text: "Some cancers, including leukemia, do not form solid tumors.", source: cancerSource },
+  { text: "Cancer-related gene changes can be inherited or develop during a person’s life.", source: cancerSource },
+  { text: "Metastasis means cancer has spread from its original location to another part of the body.", source: cancerSource },
+  { text: "Breast cancer that spreads to the lungs is still breast cancer, rather than lung cancer.", source: cancerSource },
+  { text: "Breast cancer often begins in milk ducts or milk-producing lobules.", source: breastSource },
+  { text: "Men can develop breast cancer, accounting for about 0.5–1% of cases worldwide.", source: breastSource },
+  { text: "Breast cancer risk generally rises with age.", source: breastSource },
+  { text: "Most women diagnosed with breast cancer have no known family history of it.", source: breastSource },
+  { text: "Inherited changes in genes such as BRCA1 and BRCA2 can substantially increase breast cancer risk.", source: breastSource },
+  { text: "Alcohol consumption is a breast cancer risk factor.", source: breastSource },
+  { text: "A breast cancer lump may be painless.", source: breastSource },
+  { text: "Breast changes can include skin dimpling, nipple changes, or a change in shape.", source: breastSource },
+  { text: "Most breast lumps are not cancer, but a new or unusual lump needs medical evaluation.", source: breastSource },
+  { text: "Mammography can detect breast cancer before noticeable symptoms appear.", source: breastSource },
+  { text: "Early detection followed by timely treatment reduces breast cancer deaths.", source: breastSource },
+  { text: "Breast cancer treatment may include surgery, radiation, and medicines tailored to the cancer’s characteristics.", source: breastSource },
+];
+---
+<Base title={`${pinkOut.title} — Chamblee Softball`} description={pinkOut.excerpt} bodyClass="production-site">
+  <SiteHeader />
+  <main class="pink-article">
+    <article>
+      <header class="articles-heading pink-heading">
+        <div class="section-wrap">
+          <a href="/articles">← All articles</a>
+          <p>BREAST CANCER AWARENESS · OCTOBER 6, 2026</p>
+          <span class="pink-display" aria-hidden="true">PINK OUT</span>
+          <h1>{pinkOut.title}</h1>
+          <span>Two teams. One evening of community and support.</span>
+        </div>
+      </header>
+      <div class="article-body">
+        <aside class="article-event" aria-label="Pink Out game details">
+          <strong>Tuesday, October 6, 2026 · 5:00 p.m.</strong>
+          <span>Chamblee High School vs. Decatur High School</span>
+          <span>Ceremonial first pitch: <b>Susan Williams</b></span>
+          <span>Wear pink · Donations to the <a href="https://pinkfund.org/">Pink Fund</a> accepted</span>
+        </aside>
+        <p class="article-lead">Bring your Bulldog spirit—and your pink! Chamblee High School softball is holding a <strong>Pink Out game against Decatur High School on Tuesday, October 6</strong>, bringing the community together to raise awareness for breast cancer.</p>
+        <p>Players from both teams will wear <strong>pink socks, pink ribbons, and pink accessories</strong>. Fans are invited to join them by wearing pink and filling the stands with encouragement for everyone affected by breast cancer.</p>
+        <h2>A special first pitch</h2>
+        <p>Breast cancer survivor <strong>Susan Williams</strong> will throw out the ceremonial first pitch. Arrive early to cheer her on and help make this a meaningful start to the game.</p>
+        <h2>Support, music, and a little friendly trivia</h2>
+        <p><strong>Donations to the <a href="https://pinkfund.org/">Pink Fund</a> will be accepted</strong> during the event. It’s an opportunity to give while gathering with friends, families, and neighbors for an evening of softball and awareness.</p>
+        <section class="pink-donation" aria-labelledby="donation-heading">
+          <div>
+            <h2 id="donation-heading">Give to the Pink Fund</h2>
+            <p>Scan the QR code to donate, or visit the Pink Fund website to give online.</p>
+            <a class="article-read" href="https://pinkfund.org/">Visit Pink Fund to donate →</a>
+          </div>
+          <figure>
+            <img src="/images/pink-fund-donation-qr.jpg" width="1024" height="1024" alt="QR code provided for Pink Fund donations" loading="lazy" />
+            <figcaption>Scan to donate to the Pink Fund.</figcaption>
+          </figure>
+        </section>
+        <p>The pink theme will carry through the evening, with <strong>pink music during the game</strong> and <strong>pink trivia between innings</strong>. Come ready to cheer for the players and test your trivia knowledge between the action on the field.</p>
+        <div class="pink-invitation">
+          <h2>Let’s fill the stands with pink</h2>
+          <p>Invite a friend, put on your favorite pink, and join us on October 6. Together, Chamblee and Decatur can make this game a show of support for survivors, those facing breast cancer, and the people who stand beside them.</p>
+          <a class="article-read" href="/schedule">View the game schedule →</a>
+        </div>
+        <section class="pink-facts" aria-labelledby="facts-heading">
+          <h2 id="facts-heading">20 facts about cancer and breast cancer</h2>
+          <p>Keep awareness going beyond the game with these facts from the National Cancer Institute (NCI) and World Health Organization (WHO).</p>
+          <ol>
+            {awarenessFacts.map((fact) => <li>{fact.text} <a href={fact.source.href} aria-label={`Source: ${fact.source.name} for ${fact.text}`}>{fact.source.name}</a></li>)}
+          </ol>
+        </section>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</Base>
+
+<style>
+  .pink-article { background: #fff7fa; color: #50213a; }
+  .pink-heading { background: linear-gradient(120deg, #76113f, #ab195d); }
+  .pink-heading p { color: #ffe0ee; }
+  .pink-heading .pink-display { display: block; margin-top: 26px; color: #ffd0e5; font: 400 clamp(3.3rem, 11vw, 8rem)/1 "Archivo Black", Impact, sans-serif; letter-spacing: -.045em; }
+  .pink-heading h1 { max-width: 900px; font-size: clamp(1.8rem, 3.5vw, 3rem); margin-block: 24px; }
+  .article-event { border-color: #bf2268; background: #ffe4ef; border-radius: 0 12px 12px 0; }
+  .article-body h2 { color: #8a174c; }
+  .pink-invitation { margin-top: 40px; padding: clamp(20px, 4vw, 32px); background: #ffe4ef; border-radius: 16px; }
+  .pink-invitation h2 { margin-top: 0; }
+  .article-read { color: #8a174c; }
+  .pink-donation { display: grid; grid-template-columns: 1fr 260px; align-items: center; gap: 24px; margin-block: 32px; padding: 24px; background: #fff; border: 2px solid #edb4cd; border-radius: 16px; }
+  .pink-donation h2 { margin-top: 0; }
+  .pink-donation figure { margin: 0; }
+  .pink-donation img { width: 100%; height: auto; }
+  .pink-donation figcaption { text-align: center; font-size: .85rem; }
+  .pink-facts { margin-top: 48px; padding-top: 8px; border-top: 2px solid #edb4cd; }
+  .pink-facts ol { padding-left: 1.8em; }
+  .pink-facts li { padding: 12px 0 12px 8px; border-bottom: 1px solid #edb4cd; }
+  .pink-facts li::marker { color: #8a174c; font-weight: 700; }
+  .pink-facts li a { color: #8a174c; font-size: .85rem; white-space: nowrap; text-underline-offset: 3px; }
+  @media (max-width: 640px) { .pink-donation { grid-template-columns: 1fr; } .pink-donation figure { width: min(100%, 300px); justify-self: center; } }
+</style>

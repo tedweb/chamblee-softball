@@ -691,6 +691,14 @@
           "tagline": "Proudly helping Chamblee athletes smile brighter.",
           "status": "active",
           "level": "featured"
+      },
+      {
+          "name": "Willy's Mexicana Grill",
+          "url": "https://willys.com/",
+          "image": "/images/sponsors/willys.png",
+          "tagline": "Quality Crazed, Fuled by Fun, Bring It, We R Family",
+          "status": "active",
+          "level": "featured"
       }
   ],
   "donation_links": [
