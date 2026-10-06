@@ -321,8 +321,10 @@
           "regionalGame": "true",
           "homeAway": "away",
           "display": "5:30 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:30 PM"
+          "status": "FINAL",
+          "time": "5:30 PM",
+          "chambleeScore": 17,
+          "opponentScore": 5
         },
         {
           "date": "2026-10-01",
@@ -330,8 +332,10 @@
           "regionalGame": "true",
           "homeAway": "away",
           "display": "5:00 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:00 PM"
+          "status": "FINAL",
+          "time": "5:00 PM",
+          "chambleeScore": 4,
+          "opponentScore": 1
         },
         {
           "date": "2026-10-05",
@@ -669,8 +673,10 @@
           "opponent": "St. Pius X - Middle School",
           "homeAway": "home",
           "display": "5:30 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:30 PM"
+          "status": "FINAL",
+          "outcome": "L",
+          "chambleeScore": 3,
+          "opponentScore": 5
         },
         {
           "date": "2026-10-05",
