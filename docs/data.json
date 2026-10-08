@@ -169,8 +169,8 @@
           "display": "T 4-4",
           "status": "FINAL",
           "outcome": "T",
-          "chambleeScore": 4,
-          "opponentScore": 4
+          "chambleeScore": 5,
+          "opponentScore": 6
         },
         {
           "date": "2026-08-26",
@@ -365,8 +365,10 @@
           "regionalGame": "false",
           "homeAway": "away",
           "display": "5:30 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:30 PM"
+          "status": "FINAL",
+          "time": "5:30 PM",
+          "chambleeScore": 1,
+          "opponentScore": 7
         },
         {
           "date": "2026-10-08",
