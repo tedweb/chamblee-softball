@@ -376,8 +376,10 @@
           "regionalGame": "true",
           "homeAway": "home",
           "display": "5:00 PM",
-          "status": "SCHEDULED_TIME_ONLY",
-          "time": "5:00 PM"
+          "status": "FINAL",
+          "time": "5:00 PM",
+          "chambleeScore": 9,
+          "opponentScore": 6
         }
       ]
     },
