@@ -3,6 +3,14 @@ import Base from "../../layouts/Base.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import { pinkOut } from "../../data/articles";
+const pinkOutPhotos = [
+  { number: 1, width: 1280, height: 853, alt: "Chamblee players wearing pink bows and belts gather with a coach on the field." },
+  { number: 2, width: 853, height: 1280, alt: "Chamblee fielders and their catcher gather in the infield wearing pink socks and ribbons." },
+  { number: 3, width: 853, height: 1280, alt: "Pink and white hair bows stand out as Chamblee teammates gather in a huddle." },
+  { number: 4, width: 853, height: 1280, alt: "A Chamblee player wearing number 5 and a pink bow stands beside a coach." },
+  { number: 5, width: 853, height: 1280, alt: "Four Chamblee players stand together on the infield with pink bows, belts, and socks." },
+  { number: 6, width: 853, height: 1280, alt: "Chamblee players wearing fielding masks and pink accessories talk together in the infield." },
+];
 const cancerSource = { name: "NCI", href: "https://www.cancer.gov/about-cancer/understanding/what-is-cancer" };
 const breastSource = { name: "WHO", href: "https://www.who.int/news-room/fact-sheets/detail/breast-cancer" };
 const awarenessFacts = [
@@ -71,6 +79,15 @@ const awarenessFacts = [
           <p>Invite a friend, put on your favorite pink, and join us on October 6. Together, Chamblee and Decatur can make this game a show of support for survivors, those facing breast cancer, and the people who stand beside them.</p>
           <a class="article-read" href="/schedule">View the game schedule →</a>
         </div>
+        <section class="pink-photos" aria-labelledby="photos-heading">
+          <h2 id="photos-heading">Pink Out in pictures</h2>
+          <p class="photo-credit">Special thanks to <strong>Damon Scher</strong> for capturing these Pink Out moments! See more of his photography on Instagram at <a href="https://instagram.com/scher_shotzz?vrfl=MTZ4bGNlMTM0NW1jbg%3D%3D" target="_blank" rel="noopener noreferrer">@scher_shotzz</a>.</p>
+          <div class="pink-photo-grid">
+            {pinkOutPhotos.map(photo => <a class:list={["pink-photo", { "pink-photo-wide": photo.number === 1 }]} href={`/images/pink-out-2026/photo-${photo.number}.jpg`} aria-label={`View full-size photo: ${photo.alt}`}>
+              <img src={`/images/pink-out-2026/photo-${photo.number}.jpg`} width={photo.width} height={photo.height} alt={photo.alt} loading="lazy" decoding="async" />
+            </a>)}
+          </div>
+        </section>
         <section class="pink-facts" aria-labelledby="facts-heading">
           <h2 id="facts-heading">20 facts about cancer and breast cancer</h2>
           <p>Keep awareness going beyond the game with these facts from the National Cancer Institute (NCI) and World Health Organization (WHO).</p>
@@ -101,6 +118,14 @@ const awarenessFacts = [
   .pink-donation img { width: 100%; height: auto; }
   .pink-donation figcaption { text-align: center; font-size: .85rem; }
   .pink-facts { margin-top: 48px; padding-top: 8px; border-top: 2px solid #edb4cd; }
+  .pink-photos { margin-top: 48px; }
+  .photo-credit a { color: #8a174c; text-underline-offset: 3px; }
+  .pink-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; margin-top: 24px; }
+  .pink-photo { display: block; border-radius: 12px; overflow: hidden; }
+  .pink-photo-wide { grid-column: 1 / -1; }
+  .pink-photo img { display: block; width: 100%; height: auto; }
+  .pink-photo:focus-visible { outline: 3px solid #8a174c; outline-offset: 4px; }
+  @media (max-width: 640px) { .pink-photo-grid { grid-template-columns: 1fr; } }
   .pink-facts ol { padding-left: 1.8em; }
   .pink-facts li { padding: 12px 0 12px 8px; border-bottom: 1px solid #edb4cd; }
   .pink-facts li::marker { color: #8a174c; font-weight: 700; }
