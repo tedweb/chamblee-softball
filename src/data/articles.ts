@@ -1,3 +1,9 @@
+export const statePlayoffs = {
+  title: "State Bound: Chamblee Softball Heads to the GHSA Playoffs",
+  href: "/articles/state-playoffs-2026",
+  excerpt: "The Bulldogs are headed to the Round of 32! After a 21–9 season and a 13–3 finish in Region 4, Chamblee opens the Class 6A GHSA State Playoffs at Pope High School in Marietta on October 14 at 5:00 p.m. Game 2 follows immediately in the best-of-three series.",
+};
+
 export const seniorNight = {
   title: "Chamblee Softball to Celebrate Anabelle Ritchey and Hannah Sullivan on Senior Night",
   href: "/articles/senior-night-2026",
