@@ -1,5 +1,5 @@
 ---
-import { statePlayoffs } from "../data/articles";
+import { seasonTribute } from "../data/articles";
 import LastGameCard from "../components/LastGameCard.astro";
 import HomeCarousel from "../components/HomeCarousel.astro";
 import SponsorCarousel from "../components/SponsorCarousel.astro";
@@ -9,7 +9,7 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 ---
 <Base title="Chamblee Bulldogs Softball" description="Schedules, teams, news and support for Chamblee High School Softball." bodyClass="production-site"><SiteHeader /><main>
   <section class="home-dugout"><div><p>WELCOME TO THE BLUE AND GOLD</p><h1>Poise in the circle.<br/><em>Power at the plate.</em></h1><span>The official home of Chamblee High School Softball—Varsity, Junior Varsity, Middle School, and the families who back every inning.</span></div><HomeCarousel /></section>
-  <section class="primary-home-article notice-card" aria-label="Latest article"><p class="article-label">STATE PLAYOFFS · OCTOBER 14, 2026 · 5:00 P.M.</p><h2><a href={statePlayoffs.href}>{statePlayoffs.title}</a></h2><p>{statePlayoffs.excerpt}</p><a class="article-read" href={statePlayoffs.href}>Read the playoff preview →</a></section>
+  <section class="primary-home-article notice-card season-feature" aria-label="Latest article"><a href={seasonTribute.href} aria-label="Read the 2026 Lady Bulldogs season tribute"><img src="/images/varsity-2026-season-tribute.jpg" width="1280" height="960" alt="Chamblee softball players gathered together in their blue and gold uniforms" /></a><div><p class="article-label">2026 SEASON TRIBUTE · OCTOBER 15, 2026</p><h2><a href={seasonTribute.href}>{seasonTribute.title}</a></h2><p>{seasonTribute.excerpt}</p><a class="article-read" href={seasonTribute.href}>Celebrate our Lady Bulldogs →</a></div></section>
   <p class="photographer-thanks section-wrap">Special thanks to <strong>Damon Scher</strong> for sharing his photography with the Chamblee softball community. Follow him on Instagram at <a href="https://instagram.com/scher_shotzz?vrfl=MTZ4bGNlMTM0NW1jbg%3D%3D" target="_blank" rel="noopener noreferrer">@scher_shotzz</a>.</p>
   <section class="home-dashboard section-wrap">
     <SponsorCarousel />
@@ -21,6 +21,9 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 
 
 <style>
+  .season-feature { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: center; }
+  .season-feature img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  @media(max-width:640px) { .season-feature { grid-template-columns: 1fr; gap: 24px; } }
   .photographer-thanks { margin-block: 28px 0; font: 400 .95rem/1.65 "DM Sans", Arial, sans-serif; color: var(--navy); }
   .photographer-thanks a { font-weight: 700; text-underline-offset: 3px; }
 </style>

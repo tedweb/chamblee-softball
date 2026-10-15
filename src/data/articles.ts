@@ -14,3 +14,8 @@ export const pinkOut = {
   href: "/articles/pink-out-2026",
   excerpt: "Wear your pink and join Chamblee High School softball on Tuesday, October 6, at 5:00 p.m. as the Bulldogs take on Decatur High School for breast cancer awareness. Breast cancer survivor Susan Williams will throw the ceremonial first pitch, with donations to the Pink Fund, pink music, and between-inning trivia rounding out the evening.",
 };
+export const seasonTribute = {
+  title: "A Season to Be Proud Of: Celebrating Our 2026 Lady Bulldogs",
+  href: "/articles/season-tribute-2026",
+  excerpt: "Twenty-one regular-season wins. A milestone 100th career hit. Two unforgettable senior captains. Celebrate the heart, friendship, and progress of our 2026 Lady Bulldogs—and the bright future ahead.",
+};

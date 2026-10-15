@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { seasonTribute } from "../../data/articles";
+---
+<Base title={`${seasonTribute.title} — Chamblee Softball`} description={seasonTribute.excerpt} bodyClass="production-site">
+  <SiteHeader />
+  <main>
+    <article>
+      <header class="articles-heading"><div class="section-wrap">
+        <a href="/articles">← All articles</a>
+        <p>2026 SEASON TRIBUTE · OCTOBER 15, 2026</p>
+        <h1>{seasonTribute.title}</h1>
+        <span>Celebrating the players, friendships, and leadership that made this season special.</span>
+      </div></header>
+      <div class="article-body">
+        <figure class="tribute-photo">
+          <img src="/images/varsity-2026-season-tribute.jpg" width="1280" height="960" alt="Chamblee softball players gathered together in their blue and gold uniforms" />
+          <figcaption>Together in blue and gold. Celebrating our 2026 Lady Bulldogs.</figcaption>
+        </figure>
+        <p class="article-lead">The final out is always hard when you love a team this much. Chamblee’s postseason ended against Pope in the first round of the playoffs, but our Lady Bulldogs gave their families, friends, and school community so much to celebrate in 2026.</p>
+        <p>A <strong>21–9 regular-season record and a 13–3 region record</strong> tell the story of an outstanding season on the field. Behind those numbers is a team worth cheering for: players growing together, friendships carrying them through the ups and downs, and leaders helping their teammates find their next step forward. There is plenty of Bulldog pride to take into the offseason.</p>
+
+        <h2>Thank you, “Hannabelle”</h2>
+        <p>At the heart of this team’s leadership were its two seniors and captains, <strong>Annabelle Ritchey and Hannah Sullivan</strong>. Known affectionately as <strong>“Hannabelle,”</strong> these best friends brought a special bond to the Bulldogs—and set an example that will stay with the program long after their final season.</p>
+        <p>Excellent ballplayers, trusted captains, and role models for their teammates, Annabelle and Hannah showed how friendship and leadership can strengthen a team. Their legacy belongs in the relationships they built and the example they leave for the players who follow.</p>
+        <p>To Annabelle and Hannah: thank you for everything you have given Chamblee softball. As you finish your time at Chamblee High School and look ahead to your next big endeavors, your Bulldog family is cheering you on. May the next chapter bring new friendships, exciting opportunities, and every reason to keep believing in yourselves.</p>
+
+        <h2>A hundred reasons to celebrate</h2>
+        <p>Junior <strong>Maddi Jones</strong> added an unforgettable milestone to the season, finishing the regular season with her <strong>100th career base hit as a Lady Bulldog</strong>. Reaching that mark as a junior is a tremendous accomplishment—and with another season ahead, there is more of Maddi’s Chamblee story still to be written. Congratulations, Maddi!</p>
+
+        <h2>Progress, not perfection</h2>
+        <p>The next chapter also brings a close-knit group of rising seniors with a good history of playing together. They are looking ahead to their chance to become role models for the varsity team, carrying forward the leadership Annabelle and Hannah helped establish.</p>
+        <p>Coach Bman’s principle of <strong>“progress, not perfection”</strong> offers a meaningful guide for that journey. Keep learning. Keep showing up for one another. Keep taking the next step. This group’s shared history gives them a strong foundation as they prepare to lead the Bulldogs into a new season.</p>
+
+        <h2>Thank you to our coaches</h2>
+        <p>Our heartfelt thanks go to <strong>Nathaniel Berryman, John Phelps, Doug Holtzman, Alan Loper, Chris Yarbrough, and Lew Henry</strong> for the time, care, and guidance they have given this team. Thank you for helping our players grow as ballplayers, teammates, and young people, and for giving them a season they can look back on with pride.</p>
+        <p>To the families, friends, and fans who supported the blue and gold: thank you for being part of this season, too. Every team needs a community behind it, and these Lady Bulldogs have one that loves them.</p>
+        <p>To our 2026 varsity team: hold your heads high. You gave us an outstanding season, lasting memories, and so much to look forward to. We are proud of you, grateful for you, and already looking forward to seeing the Bulldogs take the field again.</p>
+        <p><strong>Until next season, Go Bulldogs!</strong></p>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</Base>
+
+<style>
+  .tribute-photo { margin: 0 0 32px; }
+  .tribute-photo img { display: block; width: 100%; height: auto; border-radius: 12px; }
+  .tribute-photo figcaption { margin-top: 10px; font-size: .9rem; color: #5b687b; }
+</style>
