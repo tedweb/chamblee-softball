@@ -1,5 +1,5 @@
 ---
-import { seasonTribute } from "../data/articles";
+import { seasonBanquet } from "../data/articles";
 import LastGameCard from "../components/LastGameCard.astro";
 import HomeCarousel from "../components/HomeCarousel.astro";
 import SponsorCarousel from "../components/SponsorCarousel.astro";
@@ -9,7 +9,7 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 ---
 <Base title="Chamblee Bulldogs Softball" description="Schedules, teams, news and support for Chamblee High School Softball." bodyClass="production-site"><SiteHeader /><main>
   <section class="home-dugout"><div><p>WELCOME TO THE BLUE AND GOLD</p><h1>Poise in the circle.<br/><em>Power at the plate.</em></h1><span>The official home of Chamblee High School Softball—Varsity, Junior Varsity, Middle School, and the families who back every inning.</span></div><HomeCarousel /></section>
-  <section class="primary-home-article notice-card season-feature" aria-label="Latest article"><a href={seasonTribute.href} aria-label="Read the 2026 Lady Bulldogs season tribute"><img src="/images/varsity-2026-season-tribute.jpg" width="1280" height="960" alt="Chamblee softball players gathered together in their blue and gold uniforms" /></a><div><p class="article-label">2026 SEASON TRIBUTE · OCTOBER 15, 2026</p><h2><a href={seasonTribute.href}>{seasonTribute.title}</a></h2><p>{seasonTribute.excerpt}</p><a class="article-read" href={seasonTribute.href}>Celebrate our Lady Bulldogs →</a></div></section>
+  <section class="primary-home-article notice-card season-feature" aria-label="Latest article"><a href={seasonBanquet.href} aria-label="Read the 2026 Lady Bulldogs banquet recap"><img src="/images/banquet-2026-4.jpg" width="1280" height="960" alt="Chamblee softball players displaying their handmade paper plate awards at the season-ending banquet" /></a><div><p class="article-label">2026 SEASON BANQUET · OCTOBER 29, 2026</p><h2><a href={seasonBanquet.href}>{seasonBanquet.title}</a></h2><p>{seasonBanquet.excerpt}</p><a class="article-read" href={seasonBanquet.href}>Celebrate the season with us →</a></div></section>
   <p class="photographer-thanks section-wrap">Special thanks to <strong>Damon Scher</strong> for sharing his photography with the Chamblee softball community. Follow him on Instagram at <a href="https://instagram.com/scher_shotzz?vrfl=MTZ4bGNlMTM0NW1jbg%3D%3D" target="_blank" rel="noopener noreferrer">@scher_shotzz</a>.</p>
   <section class="home-dashboard section-wrap">
     <SponsorCarousel />

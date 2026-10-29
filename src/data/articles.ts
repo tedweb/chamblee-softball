@@ -1,3 +1,9 @@
+export const seasonBanquet = {
+  title: "Lady Bulldogs Celebrate a Memorable Season—and a Bright Future",
+  href: "/articles/season-banquet-2026",
+  excerpt: "Players, coaches, families, and supporters gathered to celebrate an amazing season, honor the seniors, and recognize the people who make Chamblee Softball special. The season-ending banquet offered memories to treasure and plenty of reasons to look ahead with pride.",
+};
+
 export const statePlayoffs = {
   title: "State Bound: Chamblee Softball Heads to the GHSA Playoffs",
   href: "/articles/state-playoffs-2026",
