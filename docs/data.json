@@ -713,6 +713,14 @@
           "tagline": "Quality Crazed, Fuled by Fun, Bring It, We R Family",
           "status": "active",
           "level": "featured"
+      },
+      {
+          "name": "General Tso's Restaurant and Catering",
+          "url": "https://generaltsoscatering.com/",
+          "image": "/images/sponsors/generaltsos.png",
+          "tagline": "Metro Atlanta's Chinese Takeout & Catering Spot",
+          "status": "active",
+          "level": "featured"
       }
   ],
   "donation_links": [
