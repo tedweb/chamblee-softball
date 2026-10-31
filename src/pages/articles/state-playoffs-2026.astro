@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { statePlayoffs } from "../../data/articles";
+---
+<Base title={`${statePlayoffs.title} — Chamblee Softball`} description={statePlayoffs.excerpt} bodyClass="production-site">
+  <SiteHeader />
+  <main>
+    <article>
+      <header class="articles-heading"><div class="section-wrap">
+        <a href="/articles">← All articles</a>
+        <p>GHSA STATE PLAYOFFS · CLASS 6A · ROUND OF 32</p>
+        <h1>{statePlayoffs.title}</h1>
+        <span>A season to be proud of. A new challenge ahead. Let’s go, Bulldogs!</span>
+      </div></header>
+      <div class="article-body">
+        <aside class="article-event" aria-label="Playoff series details">
+          <strong>First Round · Best-of-three series</strong>
+          <span>Chamblee at Pope High School · Marietta, Georgia</span>
+          <span>Game 1: <b>Wednesday, October 14, 2026, at 5:00 p.m.</b></span>
+          <span>Game 2: <b>Immediately following Game 1</b></span>
+          <span>Game 3, if needed: <b>Thursday, October 15</b> · Time to be announced</span>
+        </aside>
+
+        <p class="article-lead">The Bulldogs are state-playoff bound! Chamblee varsity softball has advanced to the <strong>First Round of the GHSA State Playoffs—the Round of 32—in Class 6A (AAAAAA)</strong>, giving the blue and gold another reason to celebrate a strong 2026 season.</p>
+        <p>Chamblee enters the postseason with a <strong>21–9 overall record and a 13–3 record in Region 4</strong>. Twenty-one wins and a strong region finish represent a season’s worth of effort from the players and coaches, backed by families and fans who have been there to cheer them on. Now the Bulldogs have the opportunity to carry that work onto the state-playoff stage.</p>
+
+        <h2>A competitive opening matchup</h2>
+        <p>The road begins in Marietta, where <strong>Pope High School will host the best-of-three series</strong>. Pope also brings a <strong>21–9 overall record</strong>, along with a <strong>10–4 region record</strong>. With matching overall records, both teams arrive with plenty of success behind them and a chance to write the next chapter of their season.</p>
+        <p>For Chamblee, it’s a fresh opportunity to compete together, support one another, and make every inning count. The postseason offers a new challenge, and the Bulldogs have earned their place in it.</p>
+
+        <h2>Two games to open the series</h2>
+        <p><strong>Game 1 begins Wednesday, October 14, at 5:00 p.m.</strong> Game 2 will follow immediately as part of the opening-night doubleheader. The first team to win two games advances. If the teams split Wednesday’s games, a deciding Game 3 will be played on Thursday, October 15.</p>
+        <p>Live broadcast coverage is scheduled to begin October 14, offering fans another way to follow the Bulldogs as the series gets underway.</p>
+
+        <div class="playoff-invitation">
+          <h2>Bring the blue and gold</h2>
+          <p>Bulldog families, students, alumni, and fans: let’s celebrate this team and send them into the playoffs with our support. If you’re heading to Pope, wear your Chamblee colors and bring your cheering voice for a full evening of softball.</p>
+          <p>Congratulations to our varsity players and coaches on reaching the state playoffs. <strong>We’re proud of you, Bulldogs—let’s keep this season going!</strong></p>
+        </div>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</Base>
+
+<style>
+  .playoff-invitation { margin-top: 36px; padding: clamp(24px, 4vw, 36px); border-radius: 16px; background: #fff5cd; }
+  .playoff-invitation h2 { margin-top: 0; }
+  .playoff-invitation p:last-child { margin-bottom: 0; }
+</style>

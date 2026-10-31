@@ -2,13 +2,16 @@
 import Base from "../../layouts/Base.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
-import { pinkOut, seniorNight } from "../../data/articles";
+import { seasonBanquet, seasonTribute, statePlayoffs, pinkOut, seniorNight } from "../../data/articles";
 ---
 <Base title="Articles — Chamblee Softball" description="Stories and news from the Chamblee softball community." bodyClass="production-site">
   <SiteHeader />
   <main>
     <header class="articles-heading"><div class="section-wrap"><p>FROM THE FIELD</p><h1>Articles</h1><span>Stories from our Bulldog family.</span></div></header>
     <section class="article-list section-wrap" aria-label="Latest articles">
+      <article><p class="article-label">2026 SEASON BANQUET · OCTOBER 29, 2026</p><h2><a href={seasonBanquet.href}>{seasonBanquet.title}</a></h2><p>{seasonBanquet.excerpt}</p><a class="article-read" href={seasonBanquet.href}>Celebrate the season with us →</a></article>
+      <article><p class="article-label">2026 SEASON TRIBUTE · OCTOBER 15, 2026</p><h2><a href={seasonTribute.href}>{seasonTribute.title}</a></h2><p>{seasonTribute.excerpt}</p><a class="article-read" href={seasonTribute.href}>Celebrate our Lady Bulldogs →</a></article>
+      <article><p class="article-label">STATE PLAYOFFS · OCTOBER 14, 2026</p><h2><a href={statePlayoffs.href}>{statePlayoffs.title}</a></h2><p>{statePlayoffs.excerpt}</p><a class="article-read" href={statePlayoffs.href}>Read the playoff preview →</a></article>
       <article class="pink-preview"><p class="article-label">PINK OUT · OCTOBER 6, 2026</p><h2><a href={pinkOut.href}>{pinkOut.title}</a></h2><p>{pinkOut.excerpt}</p><a class="article-read" href={pinkOut.href}>Get the Pink Out details →</a></article>
       <article><p class="article-label">SENIOR NIGHT · SEPTEMBER 28, 2026</p><h2><a href={seniorNight.href}>{seniorNight.title}</a></h2><p>{seniorNight.excerpt}</p><a class="article-read" href={seniorNight.href}>Read the article →</a></article>
     </section>

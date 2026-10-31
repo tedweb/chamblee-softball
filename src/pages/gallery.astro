@@ -15,8 +15,10 @@ const photos = readdirSync(join(process.cwd(), "public/images"), { withFileTypes
 // Every 12 photos, three span two columns to break up the grid.
 const isWide = (index: number) => [2, 6, 10].includes(index % 12);
 ---
-<Base title="Photo Gallery — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main><section class="gallery-head"><p>2026 PHOTO GALLERY</p><h1>Blue, gold,<br/><em>and all grit.</em></h1><span>Moments from the circle, the plate, and the teammates who make every inning count.</span></section><section class="photo-grid">{photos.map((photo, i) => <figure class:list={{ wide: isWide(i) }}><img src={`/images/${encodeURIComponent(photo)}`} alt={`Chamblee Softball photo ${i + 1}`} loading={i < 3 ? "eager" : "lazy"} decoding="async" /></figure>)}</section></main><SiteFooter /></Base>
+<Base title="Photo Gallery — Chamblee Softball" bodyClass="production-site"><SiteHeader /><main><section class="gallery-head"><p>2026 PHOTO GALLERY</p><h1>Blue, gold,<br/><em>and all grit.</em></h1><span>Moments from the circle, the plate, and the teammates who make every inning count.</span><p class="photographer-thanks">Special thanks to <strong>Damon Scher</strong> for sharing his photography with the Chamblee softball community. Follow him on Instagram at <a href="https://instagram.com/scher_shotzz?vrfl=MTZ4bGNlMTM0NW1jbg%3D%3D" target="_blank" rel="noopener noreferrer">@scher_shotzz</a>.</p></section><section class="photo-grid">{photos.map((photo, i) => <figure class:list={{ wide: isWide(i) }}><img src={`/images/${encodeURIComponent(photo)}`} alt={`Chamblee Softball photo ${i + 1}`} loading={i < 3 ? "eager" : "lazy"} decoding="async" /></figure>)}</section></main><SiteFooter /></Base>
 
 <style>
   .photo-grid { grid-auto-flow: dense; }
+  .gallery-head .photographer-thanks { max-width: 760px; margin: 24px 0 0; font: 400 1rem/1.65 "DM Sans", Arial, sans-serif; letter-spacing: normal; }
+  .photographer-thanks a { font-weight: 700; text-underline-offset: 3px; }
 </style>

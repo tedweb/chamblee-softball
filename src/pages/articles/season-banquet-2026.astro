@@ -1,0 +1,53 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { seasonBanquet } from "../../data/articles";
+---
+<Base title={`${seasonBanquet.title} — Chamblee Softball`} description={seasonBanquet.excerpt} bodyClass="production-site">
+  <SiteHeader />
+  <main>
+    <article>
+      <header class="articles-heading"><div class="section-wrap">
+        <a href="/articles">← All articles</a>
+        <p>2026 SEASON BANQUET · OCTOBER 29, 2026</p>
+        <h1>{seasonBanquet.title}</h1>
+        <span>Celebrating our athletes, our community, and the next chapter of Chamblee Softball.</span>
+      </div></header>
+      <div class="article-body">
+        <figure>
+          <img src="/images/banquet-2026-4.jpg" width="1280" height="960" alt="Chamblee softball players gathered at the season-ending banquet, displaying their colorful handmade paper plate awards" />
+          <figcaption>The Lady Bulldogs celebrate the personalities and friendships that make this team special.</figcaption>
+        </figure>
+        <p class="article-lead">The Chamblee Lady Bulldogs gathered for their season-ending banquet to celebrate an outstanding season, recognize their athletes and honor the people who helped make it all possible. With players, coaches, families and supporters together, the evening offered a chance to reflect on the season and the relationships built along the way.</p>
+        <p>Blue and gold decorations set the scene as guests shared dinner provided by <strong>General Tso’s Restaurant and Catering</strong>. Away from the competition and busy schedules, the banquet gave the Chamblee softball community time to enjoy being together and celebrate a team worth cheering for.</p>
+        <figure>
+          <img src="/images/banquet-2026-1.jpg" width="1280" height="960" loading="lazy" alt="Families and supporters seated together at banquet tables decorated in blue and gold" />
+          <figcaption>The Chamblee softball community comes together for an evening of celebration.</figcaption>
+        </figure>
+        <p>Coaches’ remarks and player recognition brought the focus to the athletes at the heart of the program. The awards portion of the evening recognized individual accomplishments while offering a reminder that every player contributes to a team’s success. An amazing season takes dedication throughout the roster, from the work put into practice to the encouragement shared in the dugout.</p>
+        <figure>
+          <img src="/images/banquet-2026-2.jpg" width="1280" height="960" loading="lazy" alt="Speakers address players and families from the front of the banquet room as softball photos appear on the projection screen" />
+          <figcaption>A time to reflect on the season and recognize the athletes at the heart of the program.</figcaption>
+        </figure>
+        <p>Senior recognition and speeches marked a meaningful part of the celebration. For the seniors, the evening represented the closing of a chapter filled with teammates, competition and memories. It also offered an opportunity to recognize their place in the program and the example they leave for the players following them.</p>
+        <p>The paper plate awards added a personal, playful touch. Colorful, handmade awards celebrated the personalities that make this group unique, and the team photo captured players proudly displaying them together. Those moments reflected a part of softball that lasts well beyond a final score: the joy of belonging to a team.</p>
+        <figure>
+          <img src="/images/banquet-2026-3.jpg" width="1280" height="960" loading="lazy" alt="Two players hold paper plate awards at the front of the room during the banquet program" />
+          <figcaption>Handmade paper plate awards add a personal touch to the evening.</figcaption>
+        </figure>
+        <p>The <strong>Booster Club</strong> also gave a well-deserved shoutout to the <strong>coaches and field crew</strong>. Their time, care and work behind the scenes help give Chamblee’s athletes a place to develop and compete. The evening was a reminder of how many people contribute to a successful season.</p>
+        <p>As Chamblee celebrates its seniors and looks toward the next season, there is plenty of reason for optimism. Returning players have experiences to build on, younger athletes have examples to follow, and the program has a community ready to support them.</p>
+        <p><strong>The banquet closed the season with gratitude and pride—and with every reason to believe the future of Chamblee Softball is bright.</strong></p>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</Base>
+
+<style>
+  figure { margin: 0 0 32px; }
+  figure:not(:first-child) { margin-top: 32px; }
+  figure img { display: block; width: 100%; height: auto; border-radius: 12px; }
+  figcaption { margin-top: 10px; font-size: .9rem; color: #5b687b; }
+</style>

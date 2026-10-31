@@ -1,5 +1,5 @@
 ---
-import { pinkOut } from "../data/articles";
+import { seasonBanquet } from "../data/articles";
 import LastGameCard from "../components/LastGameCard.astro";
 import HomeCarousel from "../components/HomeCarousel.astro";
 import SponsorCarousel from "../components/SponsorCarousel.astro";
@@ -9,7 +9,8 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 ---
 <Base title="Chamblee Bulldogs Softball" description="Schedules, teams, news and support for Chamblee High School Softball." bodyClass="production-site"><SiteHeader /><main>
   <section class="home-dugout"><div><p>WELCOME TO THE BLUE AND GOLD</p><h1>Poise in the circle.<br/><em>Power at the plate.</em></h1><span>The official home of Chamblee High School Softball—Varsity, Junior Varsity, Middle School, and the families who back every inning.</span></div><HomeCarousel /></section>
-  <section class="primary-home-article notice-card pink-preview" aria-label="Latest article"><p class="article-label">PINK OUT · TUESDAY, OCTOBER 6, 2026 · 5:00 P.M.</p><h2><a href={pinkOut.href}>{pinkOut.title}</a></h2><p>{pinkOut.excerpt}</p><a class="article-read" href={pinkOut.href}>Get the Pink Out details & donation QR code →</a></section>
+  <section class="primary-home-article notice-card season-feature" aria-label="Latest article"><a href={seasonBanquet.href} aria-label="Read the 2026 Lady Bulldogs banquet recap"><img src="/images/banquet-2026-4.jpg" width="1280" height="960" alt="Chamblee softball players displaying their handmade paper plate awards at the season-ending banquet" /></a><div><p class="article-label">2026 SEASON BANQUET · OCTOBER 29, 2026</p><h2><a href={seasonBanquet.href}>{seasonBanquet.title}</a></h2><p>{seasonBanquet.excerpt}</p><a class="article-read" href={seasonBanquet.href}>Celebrate the season with us →</a></div></section>
+  <p class="photographer-thanks section-wrap">Special thanks to <strong>Damon Scher</strong> for sharing his photography with the Chamblee softball community. Follow him on Instagram at <a href="https://instagram.com/scher_shotzz?vrfl=MTZ4bGNlMTM0NW1jbg%3D%3D" target="_blank" rel="noopener noreferrer">@scher_shotzz</a>.</p>
   <section class="home-dashboard section-wrap">
     <SponsorCarousel />
     {lastGame && <LastGameCard {...lastGame} />}
@@ -19,3 +20,10 @@ import Base from "../layouts/Base.astro"; import SiteHeader from "../components/
 
 
 
+<style>
+  .season-feature { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 32px; align-items: center; }
+  .season-feature img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  @media(max-width:640px) { .season-feature { grid-template-columns: 1fr; gap: 24px; } }
+  .photographer-thanks { margin-block: 28px 0; font: 400 .95rem/1.65 "DM Sans", Arial, sans-serif; color: var(--navy); }
+  .photographer-thanks a { font-weight: 700; text-underline-offset: 3px; }
+</style>
